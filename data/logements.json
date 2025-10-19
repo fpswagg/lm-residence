@@ -1,0 +1,113 @@
+{
+    "logements": [
+        {
+            "id": 1,
+            "nom": "Studio Confort",
+            "type": "studio",
+            "description": "Un studio élégant et spacieux, parfait pour un séjour court ou long terme.",
+            "capacite": 2,
+            "surface": "35m²",
+            "prix": 60000,
+            "devise": "FCFA",
+            "disponibilite": true,
+            "equipements": [
+                "Climatisation",
+                "WiFi haute vitesse",
+                "Cuisine équipée",
+                "Salle de bain luxe",
+                "Balcon avec vue",
+                "Télévision écran plat",
+                "Machine à laver",
+                "Véranda aménagée",
+                "Cafetière et micro-ondes"
+            ],
+            "images": [
+                "/images/studio-2.jpg",
+                "/images/studio-4.jpg",
+                "/images/studio-6.jpg",
+                "/images/studio-8.jpg",
+                "/images/studio-11.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "nom": "Studio Premium",
+            "type": "studio",
+            "description": "Studio haut de gamme avec vue panoramique et équipements modernes.",
+            "capacite": 2,
+            "surface": "35m²",
+            "prix": 60000,
+            "devise": "FCFA",
+            "disponibilite": true,
+            "equipements": [
+                "Climatisation",
+                "WiFi haute vitesse",
+                "Cuisine équipée",
+                "Salle de bain luxe",
+                "Balcon avec vue",
+                "Télévision écran plat",
+                "Machine à laver",
+                "Véranda aménagée",
+                "Cafetière et micro-ondes"
+            ],
+            "images": [
+                "/images/studio2-5.jpg",
+                "/images/studio2-11.jpg",
+                "/images/studio2-14.jpg",
+                "/images/studio2-17.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "nom": "Studio Deluxe",
+            "type": "studio",
+            "description": "Le studio le plus équipé, disposant d'une véranda, idéal pour ceux qui recherchent le maximum de confort sur un espace optimisé.",
+            "capacite": 2,
+            "surface": "35m²",
+            "prix": 60000,
+            "devise": "FCFA",
+            "disponibilite": true,
+            "equipements": [
+                "Climatisation",
+                "WiFi haute vitesse",
+                "Cuisine équipée",
+                "Salle de bain luxe",
+                "Balcon avec vue",
+                "Télévision écran plat",
+                "Machine à laver",
+                "Véranda aménagée",
+                "Cafetière et micro-ondes"
+            ],
+            "images": [
+                "/images/studio3-3.jpg",
+                "/images/studio3-2.jpg",
+                "/images/studio3-9.jpg",
+                "/images/studio3-10.jpg",
+                "/images/studio3-7.jpg",
+                "/images/studio3-14.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "nom": "Chambre Individuelle",
+            "type": "chambre",
+            "description": "Chambre confortable et bien aménagée pour les voyageurs en solo.",
+            "capacite": 2,
+            "surface": "20m²",
+            "prix": 350000,
+            "devise": "FCFA",
+            "disponibilite": true,
+            "equipements": [
+                "Climatisation",
+                "Salle de bain privée",
+                "Lit confortable",
+                "Bureau"
+            ],
+            "images": [
+                "/images/chambre-2.jpg",
+                "/images/chambre-5.jpg",
+                "/images/chambre-3.jpg"
+            ]
+        }
+    ]
+}

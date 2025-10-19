@@ -1,0 +1,101 @@
+{
+  "images": [
+    {
+      "id": 0,
+      "title": "Entrée Principale",
+      "description": "Accueil chaleureux et élégant",
+      "category": "exterieur",
+      "url": "/images/entre-3.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Studio Confort",
+      "description": "Espace repos moderne et cosy",
+      "category": "chambres",
+      "url": "/images/studio2-4.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Salon Principal",
+      "description": "Détente et convivialité",
+      "category": "espaces-communs",
+      "url": "/images/reception-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Salle de Bain Luxe",
+      "description": "Élégance et confort",
+      "category": "equipements",
+      "url": "/images/chambre-5.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Balcon avec Vue",
+      "description": "Vue panoramique sur Yaoundé",
+      "category": "exterieur",
+      "url": "/images/balcon-3.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Studio Deluxe",
+      "description": "Notre plus belle suite",
+      "category": "chambres",
+      "url": "/images/studio-6.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Escalier Principal",
+      "description": "Accès élégant aux étages",
+      "category": "exterieur",
+      "url": "/images/escalier-1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Studio Premium",
+      "description": "Confort et modernité",
+      "category": "chambres",
+      "url": "/images/studio3-3.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Chambre Standard",
+      "description": "Confort et simplicité",
+      "category": "chambres",
+      "url": "/images/chambre-2.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Espace Détente",
+      "description": "Zone de relaxation",
+      "category": "espaces-communs",
+      "url": "/images/balcon-6.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "tous",
+      "name": "Tous",
+      "count": 10
+    },
+    {
+      "id": "chambres",
+      "name": "Chambres & Studios",
+      "count": 4
+    },
+    {
+      "id": "espaces-communs",
+      "name": "Espaces Communs",
+      "count": 2
+    },
+    {
+      "id": "exterieur",
+      "name": "Extérieur",
+      "count": 3
+    },
+    {
+      "id": "equipements",
+      "name": "Équipements",
+      "count": 1
+    }
+  ]
+}

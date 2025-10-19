@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "nom": "Service de Cuisinier",
+      "description": "Un cuisinier professionnel à votre disposition pour préparer vos repas selon vos préférences.",
+      "details": "Disponible pour les petits-déjeuners, déjeuners et dîners. Menus personnalisés selon vos goûts et régimes alimentaires.",
+      "prix": 150000,
+      "devise": "FCFA",
+      "periode": "par jour",
+      "options": [
+        "Petit-déjeuner uniquement",
+        "Déjeuner et dîner",
+        "Tous les repas",
+        "Menus spécialisés (végétarien, sans gluten, etc.)"
+      ]
+    },
+    {
+      "id": 2,
+      "nom": "Véhicule avec Chauffeur",
+      "description": "Transport privé avec chauffeur professionnel pour vos déplacements à Yaoundé.",
+      "details": "Chauffeur expérimenté, véhicule climatisé et bien entretenu. Disponible 24h/24.",
+      "prix": 100000,
+      "devise": "FCFA",
+      "periode": "par jour",
+      "options": ["Demi-journée (4h)", "Journée complète (8h)", "Journée étendue (12h)", "Transfert aéroport"]
+    },
+    {
+      "id": 3,
+      "nom": "Sécurité DAK",
+      "description": "Service de sécurité professionnel 24h/24 pour votre tranquillité d'esprit.",
+      "details": "Agents de sécurité formés, surveillance vidéo, contrôle d'accès. Protection complète de la résidence.",
+      "prix": 50000,
+      "devise": "FCFA",
+      "periode": "par jour",
+      "options": ["Surveillance standard", "Surveillance renforcée", "Escorte personnelle", "Sécurité événementielle"]
+    }
+  ]
+}

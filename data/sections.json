@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "titre": "L.M. Résidence",
+    "sousTitre": "Votre destination de luxe à Yaoundé",
+    "description": "Découvrez le confort et l'élégance dans nos logements haut de gamme, avec des services personnalisés pour un séjour inoubliable.",
+    "cta": "Réserver Maintenant"
+  },
+  "about": {
+    "titre": "À Propos de L.M. Résidence",
+    "description": "Depuis plusieurs années, L.M. Résidence offre une expérience d'hébergement exceptionnelle à Yaoundé. Notre engagement envers l'excellence et le service client nous distingue.",
+    "valeurs": ["Confort et Élégance", "Service Personnalisé", "Qualité Premium", "Hospitalité Chaleureuse"]
+  }
+}
