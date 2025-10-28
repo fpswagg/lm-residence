@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Camera, Maximize2, Filter } from "lucide-react"
 import { useState, useEffect } from "react"
+import galleryData from "@/data/gallery.json"
 
 interface GalleryImage {
   id: number
@@ -19,30 +20,9 @@ interface Category {
   count: number
 }
 
-interface GalleryData {
-  images: GalleryImage[]
-  categories: Category[]
-}
-
 export default function GalleryPage() {
-  const [galleryData, setGalleryData] = useState<GalleryData>({ images: [], categories: [] })
   const [selectedCategory, setSelectedCategory] = useState<string>("tous")
-  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch("/api/gallery")
-      .then((res) => res.json())
-      .then((data) => {
-        setGalleryData(data)
-        setFilteredImages(data.images)
-        setLoading(false)
-      })
-      .catch((error) => {
-        console.error("Error loading gallery:", error)
-        setLoading(false)
-      })
-  }, [])
+  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(galleryData.images)
 
   useEffect(() => {
     if (selectedCategory === "tous") {
@@ -101,19 +81,7 @@ export default function GalleryPage() {
                 ))}
               </div>
             </div>
-
-            {/* Loading State */}
-            {loading && (
-              <div className="text-center py-20">
-                <div className="w-20 h-20 bg-[#3d2817] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-                  <Camera size={32} className="text-[#cd9a51]" />
-                </div>
-                <p className="text-xl text-[#b8956a]">Chargement de la galerie...</p>
-              </div>
-            )}
-
             {/* Images Grid */}
-            {!loading && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredImages.map((image, index) => (
                   <div
@@ -159,10 +127,9 @@ export default function GalleryPage() {
                   </div>
                 ))}
               </div>
-            )}
 
             {/* Empty State */}
-            {!loading && filteredImages.length === 0 && (
+            {filteredImages.length === 0 && (
               <div className="text-center py-20">
                 <div className="w-20 h-20 bg-[#3d2817] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Camera size={32} className="text-[#cd9a51]" />

@@ -56,12 +56,12 @@ export function Footer() {
                   Nos Logements
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link href="/services" className="text-[#ede8e0] hover:text-[#cd9a51] transition-colors flex items-center gap-2 group">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8b6f47] group-hover:bg-[#cd9a51] transition-colors"></span>
                   Services
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link href="/galerie" className="text-[#ede8e0] hover:text-[#cd9a51] transition-colors flex items-center gap-2 group">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8b6f47] group-hover:bg-[#cd9a51] transition-colors"></span>
@@ -121,17 +121,9 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-lg font-bold mb-6 text-[#cd9a51]">Horaires</h3>
             <div className="space-y-2 text-sm text-[#ede8e0] mb-6">
-              <p className="flex justify-between">
-                <span className="text-[#d4c5b0]">Lun - Ven:</span>
-                <span className="font-medium">08:00 - 18:00</span>
-              </p>
-              <p className="flex justify-between">
-                <span className="text-[#d4c5b0]">Samedi:</span>
-                <span className="font-medium">09:00 - 14:00</span>
-              </p>
-              <p className="flex justify-between">
-                <span className="text-[#d4c5b0]">Dimanche:</span>
-                <span className="font-medium">Fermé</span>
+              <p className="flex items-center gap-2">
+                <span className="text-[#d4c5b0]">Ouvert&nbsp;:</span>
+                <span className="font-medium">24h/24</span>
               </p>
             </div>
             <Link

@@ -1,113 +1,190 @@
-{
-    "logements": [
-        {
-            "id": 1,
-            "nom": "Studio Confort",
-            "type": "studio",
-            "description": "Un studio élégant et spacieux, parfait pour un séjour court ou long terme.",
-            "capacite": 2,
-            "surface": "35m²",
-            "prix": 60000,
-            "devise": "FCFA",
-            "disponibilite": true,
-            "equipements": [
-                "Climatisation",
-                "WiFi haute vitesse",
-                "Cuisine équipée",
-                "Salle de bain luxe",
-                "Balcon avec vue",
-                "Télévision écran plat",
-                "Machine à laver",
-                "Véranda aménagée",
-                "Cafetière et micro-ondes"
-            ],
-            "images": [
-                "/images/studio-2.jpg",
-                "/images/studio-4.jpg",
-                "/images/studio-6.jpg",
-                "/images/studio-8.jpg",
-                "/images/studio-11.jpg"
-            ]
-        },
-        {
-            "id": 2,
-            "nom": "Studio Premium",
-            "type": "studio",
-            "description": "Studio haut de gamme avec vue panoramique et équipements modernes.",
-            "capacite": 2,
-            "surface": "35m²",
-            "prix": 60000,
-            "devise": "FCFA",
-            "disponibilite": true,
-            "equipements": [
-                "Climatisation",
-                "WiFi haute vitesse",
-                "Cuisine équipée",
-                "Salle de bain luxe",
-                "Balcon avec vue",
-                "Télévision écran plat",
-                "Machine à laver",
-                "Véranda aménagée",
-                "Cafetière et micro-ondes"
-            ],
-            "images": [
-                "/images/studio2-5.jpg",
-                "/images/studio2-11.jpg",
-                "/images/studio2-14.jpg",
-                "/images/studio2-17.jpg"
-            ]
-        },
-        {
-            "id": 3,
-            "nom": "Studio Deluxe",
-            "type": "studio",
-            "description": "Le studio le plus équipé, disposant d'une véranda, idéal pour ceux qui recherchent le maximum de confort sur un espace optimisé.",
-            "capacite": 2,
-            "surface": "35m²",
-            "prix": 60000,
-            "devise": "FCFA",
-            "disponibilite": true,
-            "equipements": [
-                "Climatisation",
-                "WiFi haute vitesse",
-                "Cuisine équipée",
-                "Salle de bain luxe",
-                "Balcon avec vue",
-                "Télévision écran plat",
-                "Machine à laver",
-                "Véranda aménagée",
-                "Cafetière et micro-ondes"
-            ],
-            "images": [
-                "/images/studio3-3.jpg",
-                "/images/studio3-2.jpg",
-                "/images/studio3-9.jpg",
-                "/images/studio3-10.jpg",
-                "/images/studio3-7.jpg",
-                "/images/studio3-14.jpg"
-            ]
-        },
-        {
-            "id": 4,
-            "nom": "Chambre Individuelle",
-            "type": "chambre",
-            "description": "Chambre confortable et bien aménagée pour les voyageurs en solo.",
-            "capacite": 2,
-            "surface": "20m²",
-            "prix": 350000,
-            "devise": "FCFA",
-            "disponibilite": true,
-            "equipements": [
-                "Climatisation",
-                "Salle de bain privée",
-                "Lit confortable",
-                "Bureau"
-            ],
-            "images": [
-                "/images/chambre-2.jpg",
-                "/images/chambre-5.jpg",
-                "/images/chambre-3.jpg"
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "nom": "Studio Jean-Philippe",
+        "type": "studio",
+        "description": "Studio élégant et spacieux, entièrement équipé pour assurer un séjour confortable, que ce soit pour une courte ou longue durée. Idéal pour deux personnes.",
+        "capacite": 2,
+        "surface": "45m²",
+        "prix": 40000,
+        "devise": "FCFA",
+        "disponibilite": true,
+        "equipements": [
+            "Climatisation",
+            "WiFi",
+            "Salon",
+            "Table à manger",
+            "Kitchenette",
+            "Chambre à coucher",
+            "Salle de bain avec baignoire",
+            "Balcon avec vue",
+            "Télévision avec Canal+ et Creolink",
+            "Trés aérés"
+        ],
+        "images": [
+            "/images/DSC_0190.JPG",
+            "/images/DSC_0198.JPG",
+            "/images/DSC_0191.JPG",
+            "/images/DSC_0192.JPG",
+            "/images/DSC_0189.JPG",
+            "/images/DSC_0194.JPG",
+            "/images/DSC_0188.JPG"
+        ]
+    },
+    {
+        "id": 2,
+        "nom": "Studio Alain-Christophe",
+        "type": "studio",
+        "description": "Studio élégant et spacieux, entièrement équipé pour assurer un séjour confortable, que ce soit pour une courte ou longue durée. Idéal pour deux personnes.",
+        "capacite": 2,
+        "surface": "45m²",
+        "prix": 40000,
+        "devise": "FCFA",
+        "disponibilite": true,
+        "equipements": [
+            "Climatisation",
+            "WiFi",
+            "Salon",
+            "Table à manger",
+            "Kitchenette",
+            "Chambre à coucher",
+            "Salle de bain avec baignoire",
+            "Télévision avec Canal+ et Creolink",
+            "Trés aérés"
+        ],
+        "images": [
+            "/images/DSC_0176.JPG",
+            "/images/DSC_0178.JPG",
+            "/images/DSC_0180.JPG",
+            "/images/DSC_0182.JPG",
+            "/images/DSC_0183.JPG",
+            "/images/DSC_0184.JPG",
+            "/images/DSC_0186.JPG"
+        ]
+    },
+    {
+        "id": 3,
+        "nom": "Chambre Marie",
+        "type": "chambre",
+        "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls ou en couple. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
+        "capacite": 2,
+        "surface": "20m²",
+        "prix": 250000,
+        "devise": "FCFA",
+        "disponibilite": true,
+        "equipements": [
+            "Climatisation",
+            "Salle de bain privée avec baignoire",
+            "WiFi",
+            "Lit confortable",
+            "Bureau"
+        ],
+        "images": [
+            "/images/DSC_0158.JPG",
+            "/images/DSC_0164.JPG",
+            "/images/DSC_0165.JPG",
+            "/images/DSC_0160.JPG",
+            "/images/DSC_0161.JPG"
+        ]
+    },
+    {
+        "id": 4,
+        "nom": "Studio Camilla",
+        "type": "studio",
+        "description": "Studio élégant et fonctionnel, doté d'une véranda et de tout le nécessaire pour un séjour agréable à deux personnes. Parfait pour profiter du confort dans un espace optimisé.",
+        "capacite": 2,
+        "surface": "45m²",
+        "prix": 35000,
+        "devise": "FCFA",
+        "disponibilite": true,
+        "equipements": [
+            "Climatisation",
+            "WiFi",
+            "Salon",
+            "Table à manger",
+            "Kitchenette",
+            "Chambre à coucher",
+            "Salle de bain avec douche",
+            "Terrase",
+            "Télévision avec Canal+ et Creolink",
+            "Trés aérés"
+        ],
+        "images": [
+            "/images/DSC_0139.JPG",
+            "/images/DSC_0141.JPG",
+            "/images/DSC_0143.JPG",
+            "/images/DSC_0145.JPG",
+            "/images/DSC_0143.JPG",
+            "/images/DSC_0143.JPG",
+            "/images/DSC_0143.JPG"
+        ]
+    },
+    {
+        "id": 5,
+        "nom": "Studio Romance",
+        "type": "studio",
+        "description": "Studio élégant et confortable, parfaitement équipé pour deux personnes. Idéal pour un séjour romantique avec tout le confort moderne dans un espace optimisé.",
+        "capacite": 2,
+        "surface": "40m²",
+        "prix": 30000,
+        "devise": "FCFA",
+        "disponibilite": false,
+        "equipements": [
+            "Climatisation",
+            "WiFi",
+            "Salon",
+            "Table à manger",
+            "Kitchenette",
+            "Chambre à coucher",
+            "Salle de bain avec douche",
+            "Terrase",
+            "Télévision avec Canal+ et Creolink"
+        ],
+        "images": [
+            "/placeholder.jpg"
+        ]
+    },
+    {
+        "id": 6,
+        "nom": "Chambre Jean-William",
+        "type": "chambre",
+        "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls ou en couple. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
+        "capacite": 2,
+        "surface": "30m²",
+        "prix": 30000,
+        "devise": "FCFA",
+        "disponibilite": false,
+        "equipements": [
+            "Climatisation",
+            "Salle de bain privée avec baignoire",
+            "Lit confortable",
+            "Coin cuisine",
+            "WiFi",
+            "Bureau",
+            "Trés aérés"
+        ],
+        "images": [
+            "/placeholder.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "nom": "Chambre Kwannel",
+        "type": "chambre",
+        "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
+        "capacite": 1,
+        "surface": "15m²",
+        "prix": 20000,
+        "devise": "FCFA",
+        "disponibilite": false,
+        "equipements": [
+            "Climatisation",
+            "Salle de bain privée avec baignoire",
+            "Lit confortable",
+            "WiFi"
+        ],
+        "images": [
+            "/placeholder.jpg"
+        ]
+    }
+]

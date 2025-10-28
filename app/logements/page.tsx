@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Check, Users, Maximize2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
+import logements from "@/data/logements.json"
 
 interface Logement {
   id: number
@@ -21,22 +22,20 @@ interface Logement {
 }
 
 export default function LogementsPage() {
-  const [logements, setLogements] = useState<Logement[]>([])
   const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({})
+  const [currentFeaturesShow, setCurrentFeaturesShow] = useState<{ [key: number]: boolean }>({})
 
   useEffect(() => {
-    fetch("/api/logements")
-      .then((res) => res.json())
-      .then((data) => {
-        setLogements(data)
-        // Initialize current image index for each logement
-        const initialIndexes: { [key: number]: number } = {}
-        data.forEach((logement: Logement) => {
-          initialIndexes[logement.id] = 0
-        })
-        setCurrentImageIndex(initialIndexes)
-      })
+    // Initialize current image index for each logement
+    const initialIndexes: { [key: number]: number } = {}
+    logements.forEach((logement: Logement) => {
+      initialIndexes[logement.id] = 0
+    })
+    setCurrentImageIndex(initialIndexes)
   }, [])
+
+  const doesFeaturesShow = (logementId: number) => Boolean(currentFeaturesShow[logementId]);
+  const toggleFeaturesShow = (logementId: number) => setCurrentFeaturesShow({...currentFeaturesShow, [logementId]: !doesFeaturesShow(logementId)});
 
   const nextImage = (logementId: number, totalImages: number) => {
     setCurrentImageIndex((prev) => ({
@@ -210,7 +209,7 @@ export default function LogementsPage() {
                         Équipements Inclus
                       </p>
                       <ul className="grid grid-cols-1 gap-2">
-                        {logement.equipements.slice(0, 4).map((eq, idx) => (
+                        {(doesFeaturesShow(logement.id)?logement.equipements:logement.equipements.slice(0, 4)).map((eq, idx) => (
                           <li key={idx} className="flex items-center gap-3 text-sm text-[#f8f4ef]/80">
                             <div className="w-5 h-5 rounded-full bg-[#7a9278]/30 flex items-center justify-center flex-shrink-0">
                               <Check size={12} className="text-[#7a9278]" />
@@ -220,8 +219,8 @@ export default function LogementsPage() {
                         ))}
                       </ul>
                       {logement.equipements.length > 4 && (
-                        <p className="text-xs text-[#b8956a] mt-2 ml-8">
-                          +{logement.equipements.length - 4} autres équipements
+                        <p onClick={()=>toggleFeaturesShow(logement.id)} className="cursor-pointer text-xs text-[#b8956a] mt-2 ml-8" title={doesFeaturesShow(logement.id)?"":logement.equipements.slice(4).map(e=>`- ${e}`).join('\n')}>
+                          {doesFeaturesShow(logement.id)?"Minimiser":`+${logement.equipements.length - 4} autres équipements`}
                         </p>
                       )}
                     </div>
@@ -254,7 +253,7 @@ export default function LogementsPage() {
                 <div className="w-20 h-20 bg-[#3d2817] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Sparkles size={32} className="text-[#cd9a51]" />
                 </div>
-                <p className="text-xl text-[#b8956a]">Chargement des logements...</p>
+                <p className="text-xl text-[#b8956a]">Aucun logement disponible</p>
               </div>
             )}
           </div>

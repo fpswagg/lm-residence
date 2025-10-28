@@ -2,80 +2,101 @@
   "images": [
     {
       "id": 0,
-      "title": "Entrée Principale",
-      "description": "Accueil chaleureux et élégant",
+      "title": "Vue panoramique de la résidence",
+      "description": "Superbe vue extérieure sur la résidence.",
       "category": "exterieur",
-      "url": "/images/entre-3.jpg"
+      "url": "/images/DSC_0170.JPG"
     },
     {
       "id": 1,
-      "title": "Studio Confort",
-      "description": "Espace repos moderne et cosy",
-      "category": "chambres",
-      "url": "/images/studio2-4.jpg"
+      "title": "Entrée principale",
+      "description": "Portes d'entrée accueillantes menant aux espaces communs.",
+      "category": "espaces-communs",
+      "url": "/images/DSC_0152.JPG"
     },
     {
       "id": 2,
-      "title": "Salon Principal",
-      "description": "Détente et convivialité",
+      "title": "Accueil et réception",
+      "description": "Comptoir de réception lumineux, accueillant les visiteurs.",
       "category": "espaces-communs",
-      "url": "/images/reception-1.jpg"
+      "url": "/images/DSC_0208.JPG"
     },
     {
       "id": 3,
-      "title": "Salle de Bain Luxe",
-      "description": "Élégance et confort",
-      "category": "equipements",
-      "url": "/images/chambre-5.jpg"
+      "title": "Salon moderne",
+      "description": "Espace de repos contemporain et convivial dans le studio.",
+      "category": "chambres",
+      "url": "/images/DSC_0188.JPG"
     },
     {
       "id": 4,
-      "title": "Balcon avec Vue",
-      "description": "Vue panoramique sur Yaoundé",
-      "category": "exterieur",
-      "url": "/images/balcon-3.jpg"
+      "title": "Coin détente extérieur",
+      "description": "Fauteuil confortable à l'extérieur, idéal pour se relaxer au soleil.",
+      "category": "espaces-communs",
+      "url": "/images/DSC_0210.JPG"
     },
     {
       "id": 5,
-      "title": "Studio Deluxe",
-      "description": "Notre plus belle suite",
-      "category": "chambres",
-      "url": "/images/studio-6.jpg"
+      "title": "Enseigne extérieure",
+      "description": "Plaque de la résidence élégante à l'entrée.",
+      "category": "exterieur",
+      "url": "/images/DSC_0168.JPG"
     },
     {
       "id": 6,
-      "title": "Escalier Principal",
-      "description": "Accès élégant aux étages",
-      "category": "exterieur",
-      "url": "/images/escalier-1.jpg"
+      "title": "Salle de restauration",
+      "description": "Salle de restauration conviviale pour les résidents.",
+      "category": "espaces-communs",
+      "url": "/images/DSC_0203.JPG"
     },
     {
       "id": 7,
-      "title": "Studio Premium",
-      "description": "Confort et modernité",
+      "title": "Chambre Marie",
+      "description": "Chambre confortable avec un lit douillet.",
       "category": "chambres",
-      "url": "/images/studio3-3.jpg"
+      "url": "/images/DSC_0158.JPG"
     },
     {
       "id": 8,
-      "title": "Chambre Standard",
-      "description": "Confort et simplicité",
-      "category": "chambres",
-      "url": "/images/chambre-2.jpg"
+      "title": "Salle de bain élégante",
+      "description": "Salle de bain moderne, équipée avec élégance.",
+      "category": "equipements",
+      "url": "/images/DSC_0161.JPG"
     },
     {
       "id": 9,
-      "title": "Espace Détente",
-      "description": "Zone de relaxation",
-      "category": "espaces-communs",
-      "url": "/images/balcon-6.jpg"
+      "title": "Cuisine, ustensiles et équipements",
+      "description": "Ustensiles de cuisine modernes et espace vaisselle pratique.",
+      "category": "equipements",
+      "url": "/images/DSC_0199.JPG"
+    },
+    {
+      "id": 10,
+      "title": "Kitchenette équipée",
+      "description": "Petit espace cuisine moderne dans le studio.",
+      "category": "equipements",
+      "url": "/images/DSC_0198.JPG"
+    },
+    {
+      "id": 11,
+      "title": "Studio Premium",
+      "description": "Espace de vie lumineux avec fauteuil confortable.",
+      "category": "chambres",
+      "url": "/images/DSC_0139.JPG"
+    },
+    {
+      "id": 12,
+      "title": "Chambre Standard",
+      "description": "Chambre lumineuse adaptée au repos quotidien.",
+      "category": "chambres",
+      "url": "/images/DSC_0145.JPG"
     }
   ],
   "categories": [
     {
       "id": "tous",
       "name": "Tous",
-      "count": 10
+      "count": 13
     },
     {
       "id": "chambres",
@@ -85,17 +106,17 @@
     {
       "id": "espaces-communs",
       "name": "Espaces Communs",
-      "count": 2
+      "count": 4
     },
     {
       "id": "exterieur",
       "name": "Extérieur",
-      "count": 3
+      "count": 2
     },
     {
       "id": "equipements",
       "name": "Équipements",
-      "count": 1
+      "count": 3
     }
   ]
 }

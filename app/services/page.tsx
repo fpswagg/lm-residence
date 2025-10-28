@@ -3,7 +3,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
-import { ChefHat, Car, Shield, Sparkles, Check } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { ChefHat, Car, Shield, Sparkles, Shirt } from "lucide-react"
+import services from "@/data/services.json"
 
 interface Service {
   id: number
@@ -18,19 +20,15 @@ interface Service {
 
 const serviceIcons: { [key: string]: any } = {
   "Cuisinier": ChefHat,
+  "Lessive": Shirt,
   "Chauffeur": Car,
   "Sécurité": Shield,
   "default": Sparkles
 }
 
 export default function ServicesPage() {
-  const [services, setServices] = useState<Service[]>([])
-
-  useEffect(() => {
-    fetch("/api/services")
-      .then((res) => res.json())
-      .then((data) => setServices(data))
-  }, [])
+  const router = useRouter();
+  const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!.replace("+", "").replaceAll(" ","")}`;
 
   const getServiceIcon = (serviceName: string) => {
     for (const key in serviceIcons) {
@@ -73,7 +71,7 @@ export default function ServicesPage() {
                 return (
                   <div
                     key={service.id}
-                    className="group relative bg-white rounded-2xl p-8 md:p-10 border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-2xl transition-all duration-500"
+                    className="group relative bg-white rounded-b-2xl p-8 md:p-10 border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-2xl transition-all duration-500"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* Decorative wood grain border */}
@@ -98,36 +96,20 @@ export default function ServicesPage() {
                         <p className="text-[#8b6f47] text-lg mb-3 font-medium">{service.description}</p>
                         <p className="text-[#5c3d2e]/70 mb-6 leading-relaxed">{service.details}</p>
 
-                        {/* Options - Enhanced */}
-                        <div className="mb-6">
-                          <p className="text-[#5c3d2e] font-semibold text-sm mb-4 flex items-center gap-2">
-                            <span className="w-6 h-0.5 bg-[#cd9a51]"></span>
-                            Options Disponibles
-                          </p>
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            {service.options.map((option, idx) => (
-                              <li key={idx} className="flex items-start gap-3 text-sm text-[#5c3d2e]/80">
-                                <div className="w-5 h-5 rounded-full bg-[#7a9278]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <Check size={12} className="text-[#7a9278]" />
-                                </div>
-                                <span>{option}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
                         {/* Price and CTA - Enhanced */}
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-6 border-t-2 border-[#d4c5b0] gap-4">
-                          <div>
+                        <div className="flex flex-col sm:flex-row items-end sm:items-center justify-between pt-6 border-t-2 border-[#d4c5b0] gap-4">
+                          {/* {service.prix && <div>
                             <p className="text-[#8b6f47] text-sm font-medium mb-1">{service.periode}</p>
                             <p className="text-3xl font-serif font-bold text-[#5c3d2e]">
                               {service.prix.toLocaleString()}{" "}
                               <span className="text-lg text-[#8b6f47]">{service.devise}</span>
                             </p>
+                          </div>} */}
+                          <div className="flex-1 flex justify-end">
+                            <button onClick={()=>router.push(whatsappUrl)} className="cursor-pointer px-8 py-3 bg-gradient-to-r from-[#5c3d2e] to-[#8b6f47] text-[#f8f4ef] font-medium rounded-lg hover:shadow-xl transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                              {/* {service.prix ? "Demander ce Service" : "Discuter avec nous"} */}Discuter avec nous
+                            </button>
                           </div>
-                          <button className="px-8 py-3 bg-gradient-to-r from-[#5c3d2e] to-[#8b6f47] text-[#f8f4ef] font-medium rounded-lg hover:shadow-xl transition-all duration-300 hover:scale-105 whitespace-nowrap">
-                            Demander ce Service
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -142,7 +124,7 @@ export default function ServicesPage() {
                 <div className="w-20 h-20 bg-[#ede8e0] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Sparkles size={32} className="text-[#8b6f47]" />
                 </div>
-                <p className="text-xl text-[#8b6f47]">Chargement des services...</p>
+                <p className="text-xl text-[#8b6f47]">Aucun service disponible</p>
               </div>
             )}
           </div>
