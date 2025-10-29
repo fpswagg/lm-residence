@@ -19,8 +19,8 @@ interface Service {
 }
 
 const serviceIcons: { [key: string]: any } = {
-  "Cuisinier": ChefHat,
-  "Lessive": Shirt,
+  "chef": ChefHat,
+  "Blanchisserie": Shirt,
   "Chauffeur": Car,
   "Sécurité": Shield,
   "default": Sparkles
