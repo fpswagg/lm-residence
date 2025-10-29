@@ -69,7 +69,7 @@
         "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls ou en couple. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
         "capacite": 2,
         "surface": "20m²",
-        "prix": 250000,
+        "prix": 25000,
         "devise": "FCFA",
         "disponibilite": true,
         "equipements": [
@@ -117,74 +117,6 @@
             "/images/DSC_0143.JPG",
             "/images/DSC_0143.JPG",
             "/images/DSC_0143.JPG"
-        ]
-    },
-    {
-        "id": 5,
-        "nom": "Studio Romance",
-        "type": "studio",
-        "description": "Studio élégant et confortable, parfaitement équipé pour deux personnes. Idéal pour un séjour romantique avec tout le confort moderne dans un espace optimisé.",
-        "capacite": 2,
-        "surface": "40m²",
-        "prix": 30000,
-        "devise": "FCFA",
-        "disponibilite": false,
-        "equipements": [
-            "Climatisation",
-            "WiFi",
-            "Salon",
-            "Table à manger",
-            "Kitchenette",
-            "Chambre à coucher",
-            "Salle de bain avec douche",
-            "Terrase",
-            "Télévision avec Canal+ et Creolink"
-        ],
-        "images": [
-            "/placeholder.jpg"
-        ]
-    },
-    {
-        "id": 6,
-        "nom": "Chambre Jean-William",
-        "type": "chambre",
-        "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls ou en couple. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
-        "capacite": 2,
-        "surface": "30m²",
-        "prix": 30000,
-        "devise": "FCFA",
-        "disponibilite": false,
-        "equipements": [
-            "Climatisation",
-            "Salle de bain privée avec baignoire",
-            "Lit confortable",
-            "Coin cuisine",
-            "WiFi",
-            "Bureau",
-            "Trés aérés"
-        ],
-        "images": [
-            "/placeholder.jpg"
-        ]
-    },
-    {
-        "id": 7,
-        "nom": "Chambre Kwannel",
-        "type": "chambre",
-        "description": "Chambre lumineuse et confortable, parfaitement équipée pour les voyageurs seuls. Ambiance chaleureuse pour un séjour agréable dans un espace optimisé.",
-        "capacite": 1,
-        "surface": "15m²",
-        "prix": 20000,
-        "devise": "FCFA",
-        "disponibilite": false,
-        "equipements": [
-            "Climatisation",
-            "Salle de bain privée avec baignoire",
-            "Lit confortable",
-            "WiFi"
-        ],
-        "images": [
-            "/placeholder.jpg"
         ]
     }
 ]
