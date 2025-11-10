@@ -95,83 +95,86 @@ export default function LogementsPage() {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8b6f47] via-[#cd9a51] to-[#8b6f47]"></div>
 
                   {/* Image Carousel */}
-                  <div className="relative h-72 bg-[#3d2817] overflow-hidden group/carousel">
-                    {/* Current Image */}
-                    <img
-                      src={logement.images[currentImageIndex[logement.id] || 0] || "/placeholder.svg"}
-                      alt={`${logement.nom} - Image ${(currentImageIndex[logement.id] || 0) + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-700"
-                    />
-                    
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    {/* Navigation Buttons */}
-                    {logement.images.length > 1 && (
-                      <>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault()
-                            prevImage(logement.id, logement.images.length)
-                          }}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1612]/80 hover:bg-[#cd9a51] text-[#f8f4ef] rounded-full flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-110 z-10"
-                          aria-label="Image précédente"
-                        >
-                          <ChevronLeft size={20} />
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault()
-                            nextImage(logement.id, logement.images.length)
-                          }}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1a1612]/80 hover:bg-[#cd9a51] text-[#f8f4ef] rounded-full flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-110 z-10"
-                          aria-label="Image suivante"
-                        >
-                          <ChevronRight size={20} />
-                        </button>
-                      </>
-                    )}
-                    
-                    {/* Image Indicators */}
-                    {logement.images.length > 1 && (
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                        {logement.images.map((_, imgIndex) => (
-                          <button
-                            key={imgIndex}
-                            onClick={(e) => {
-                              e.preventDefault()
-                              goToImage(logement.id, imgIndex)
-                            }}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              imgIndex === (currentImageIndex[logement.id] || 0)
-                                ? "bg-[#cd9a51] w-6"
-                                : "bg-[#f8f4ef]/50 hover:bg-[#f8f4ef]/80"
-                            }`}
-                            aria-label={`Aller à l'image ${imgIndex + 1}`}
-                          />
-                        ))}
-                      </div>
-                    )}
-                    
-                    {/* Image Counter */}
-                    {logement.images.length > 1 && (
-                      <div className="absolute top-4 right-4 bg-[#1a1612]/80 text-[#f8f4ef] px-3 py-1 rounded-lg text-xs font-medium">
-                        {(currentImageIndex[logement.id] || 0) + 1} / {logement.images.length}
-                      </div>
-                    )}
-                    
-                    {logement.disponibilite && (
-                      <div className="absolute top-4 right-20 flex items-center gap-2 bg-[#7a9278] text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
-                        <Sparkles size={16} />
-                        Disponible
-                      </div>
-                    )}
-                    
-                    {/* Type badge */}
-                    <div className="absolute top-4 left-4 bg-[#2d1f15]/95 text-[#cd9a51] px-4 py-2 rounded-lg text-xs font-semibold tracking-wider uppercase">
-                      {logement.type}
-                    </div>
-                  </div>
+                  <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 bg-[#3d2817] overflow-hidden group/carousel rounded-t-2xl">
+  {/* Current Image avec zoom au survol */}
+  <img
+    src={logement.images[currentImageIndex[logement.id] || 0] || "/placeholder.svg"}
+    alt={`${logement.nom} - Image ${(currentImageIndex[logement.id] || 0) + 1}`}
+    className="w-full h-full object-cover transition-transform duration-700 group-hover/carousel:scale-110"
+  />
+  
+  {/* Overlay gradient amélioré */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-50 group-hover/carousel:opacity-70 transition-opacity duration-500"></div>
+  
+  {/* Navigation Buttons - Plus gros et mieux placés sur mobile */}
+  {logement.images.length > 1 && (
+    <>
+      <button
+        onClick={(e) => {
+          e.preventDefault()
+          prevImage(logement.id, logement.images.length)
+        }}
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#2d1f15] to-[#1a1612] hover:from-[#cd9a51] hover:to-[#b8956a] text-[#f8f4ef] rounded-full flex items-center justify-center sm:opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-105 active:scale-95 z-20 backdrop-blur-md border-2 border-[#cd9a51]/60 hover:border-[#cd9a51] shadow-2xl"
+        aria-label="Image précédente"
+      >
+        <ChevronLeft size={26} strokeWidth={3} />
+      </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault()
+          nextImage(logement.id, logement.images.length)
+        }}
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#2d1f15] to-[#1a1612] hover:from-[#cd9a51] hover:to-[#b8956a] text-[#f8f4ef] rounded-full flex items-center justify-center sm:opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-105 active:scale-95 z-20 backdrop-blur-md border-2 border-[#cd9a51]/60 hover:border-[#cd9a51] shadow-2xl"
+        aria-label="Image suivante"
+      >
+        <ChevronRight size={26} strokeWidth={3} />
+      </button>
+    </>
+  )}
+  
+  {/* Image Indicators - Plus gros et cliquables sur mobile */}
+  {logement.images.length > 1 && (
+    <div className="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 sm:gap-2 z-10 bg-[#1a1612]/80 backdrop-blur-md px-4 sm:px-4 py-3 sm:py-2.5 rounded-full border border-[#5c3d2e]/30">
+      {logement.images.map((_, imgIndex) => (
+        <button
+          key={imgIndex}
+          onClick={(e) => {
+            e.preventDefault()
+            goToImage(logement.id, imgIndex)
+          }}
+          className={`h-2.5 sm:h-2 rounded-full transition-all duration-300 ${
+            imgIndex === (currentImageIndex[logement.id] || 0)
+              ? "bg-gradient-to-r from-[#cd9a51] to-[#b8956a] w-8 sm:w-8 shadow-lg shadow-[#cd9a51]/50"
+              : "bg-[#f8f4ef]/30 w-2.5 sm:w-2 hover:bg-[#f8f4ef]/60 hover:w-5 sm:hover:w-4"
+          }`}
+          aria-label={`Aller à l'image ${imgIndex + 1}`}
+        />
+      ))}
+    </div>
+  )}
+  
+  {/* Image Counter - Style raffiné */}
+  {logement.images.length > 1 && (
+    <div className="absolute top-4 sm:top-5 right-4 sm:right-5 bg-gradient-to-br from-[#2d1f15]/95 to-[#1a1612]/95 text-[#f8f4ef] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium backdrop-blur-md border border-[#5c3d2e]/50 shadow-xl">
+      <span className="text-[#cd9a51] font-bold">{(currentImageIndex[logement.id] || 0) + 1}</span>
+      <span className="text-[#b8956a] mx-1">/</span>
+      <span className="text-[#f8f4ef]/70">{logement.images.length}</span>
+    </div>
+  )}
+  
+  {/* Badge Disponibilité - Simplifié sur mobile */}
+  {logement.disponibilite && (
+    <div className="absolute top-3 left-3 sm:top-5 sm:left-auto sm:right-28 md:right-32 flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-[#7a9278] to-[#5d7a5b] text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-2xl backdrop-blur-sm border border-white/30">
+      <Sparkles size={16} className="sm:w-4 sm:h-4" />
+      <span>Disponible</span>
+    </div>
+  )}
+  
+  {/* Type badge - Redesign élégant, repositionné */}
+  <div className="absolute bottom-4 left-4 sm:top-5 sm:bottom-auto sm:left-5 bg-gradient-to-br from-[#2d1f15]/95 to-[#1a1612]/95 text-[#cd9a51] px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-widest uppercase backdrop-blur-md border-2 border-[#cd9a51]/40 shadow-2xl hover:border-[#cd9a51] hover:scale-105 transition-all duration-300">
+      {logement.type}
+    </div>
+</div>
 
                   {/* Content */}
                   <div className="p-8">
