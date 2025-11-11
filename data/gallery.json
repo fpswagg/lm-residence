@@ -95,28 +95,23 @@
   "categories": [
     {
       "id": "tous",
-      "name": "Tous",
-      "count": 13
+      "name": "Tous"
     },
     {
       "id": "chambres",
-      "name": "Chambres & Studios",
-      "count": 4
+      "name": "Chambres & Studios"
     },
     {
       "id": "espaces-communs",
-      "name": "Espaces Communs",
-      "count": 4
+      "name": "Espaces Communs"
     },
     {
       "id": "exterieur",
-      "name": "Extérieur",
-      "count": 2
+      "name": "Extérieur"
     },
     {
       "id": "equipements",
-      "name": "Équipements",
-      "count": 3
+      "name": "Équipements"
     }
   ]
 }

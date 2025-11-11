@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description:
     "Lucien Marie Résidence (L.M. Résidence) est un cadre résidentiel élégant et sécurisé situé à Yaoundé, au cœur du Cameroun. Trois studios modernes et une chambre individuelle y sont à disposition, alliant confort, autonomie, services personnalisés, cuisinier sur place, véhicule avec chauffeur et sécurité DAK 24/7. Idéal pour professionnels, expatriés, étudiants ou visiteurs recherchant un environnement calme, fonctionnel et raffiné, pour un séjour court ou long.",
   keywords,
-  icons: [{ rel: "icon", url: "/logo.png" }]
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  }
 }
 
 export default function RootLayout({
