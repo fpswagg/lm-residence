@@ -1,88 +1,94 @@
 {
   "images": [
     {
-      "id": 0,
       "title": "Vue panoramique de la résidence",
       "description": "Superbe vue extérieure sur la résidence.",
       "category": "exterieur",
       "url": "/images/DSC_0170.JPG"
     },
     {
-      "id": 1,
       "title": "Entrée principale",
       "description": "Portes d'entrée accueillantes menant aux espaces communs.",
       "category": "espaces-communs",
       "url": "/images/DSC_0152.JPG"
     },
     {
-      "id": 2,
       "title": "Accueil et réception",
       "description": "Comptoir de réception lumineux, accueillant les visiteurs.",
       "category": "espaces-communs",
       "url": "/images/DSC_0208.JPG"
     },
     {
-      "id": 3,
       "title": "Salon moderne",
       "description": "Espace de repos contemporain et convivial dans le studio.",
       "category": "chambres",
       "url": "/images/DSC_0188.JPG"
     },
     {
-      "id": 4,
       "title": "Coin détente extérieur",
       "description": "Fauteuil confortable à l'extérieur, idéal pour se relaxer au soleil.",
       "category": "espaces-communs",
       "url": "/images/DSC_0210.JPG"
     },
     {
-      "id": 5,
       "title": "Enseigne extérieure",
       "description": "Plaque de la résidence élégante à l'entrée.",
       "category": "exterieur",
       "url": "/images/DSC_0168.JPG"
     },
     {
-      "id": 6,
       "title": "Salle de restauration",
       "description": "Salle de restauration conviviale pour les résidents.",
       "category": "espaces-communs",
       "url": "/images/DSC_0203.JPG"
     },
     {
-      "id": 7,
       "title": "Chambre Marie",
       "description": "Chambre confortable avec un lit douillet.",
       "category": "chambres",
       "url": "/images/DSC_0158.JPG"
     },
     {
-      "id": 8,
       "title": "Salle de bain élégante",
       "description": "Salle de bain moderne, équipée avec élégance.",
       "category": "equipements",
       "url": "/images/DSC_0161.JPG"
     },
     {
-      "id": 9,
       "title": "Cuisine, ustensiles et équipements",
       "description": "Ustensiles de cuisine modernes et espace vaisselle pratique.",
       "category": "equipements",
       "url": "/images/DSC_0199.JPG"
     },
     {
-      "id": 10,
       "title": "Kitchenette équipée",
       "description": "Petit espace cuisine moderne dans le studio.",
       "category": "equipements",
       "url": "/images/DSC_0198.JPG"
     },
     {
-      "id": 11,
       "title": "Studio Premium",
       "description": "Espace de vie lumineux avec fauteuil confortable.",
       "category": "chambres",
       "url": "/images/DSC_0139.JPG"
+    },
+    {
+      "title": "Apéritifs",
+      "description": "Des liqueurs et boissons mises à disposition dans l'espace salle à manger.",
+      "category": "espaces-communs",
+      "url": "/images/ai_enchanced/ai-image-upscaler-1763918685238.jpg"
+    },
+    {
+      "title": "Bar",
+      "description": "Diverses boissons et liqueurs présentées en salle à manger.",
+      "category": "espaces-communs",
+      "url": "/images/ai_enchanced/ai-image-upscaler-1763918815576.jpg"
+    },
+    {
+      "title": "Convivialité",
+      "description": "Un choix de liqueurs et rafraîchissements proposés dans la salle à manger.",
+      "category": "espaces-communs",
+      "url": "/images/ai_enchanced/ai-image-upscaler-1763919131359.jpg"
     }
   ],
   "categories": [

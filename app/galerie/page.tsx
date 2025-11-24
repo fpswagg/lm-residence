@@ -6,6 +6,8 @@ import { Camera, Maximize2, Filter, X, ChevronLeft, ChevronRight, Search, Loader
 import { useState, useEffect, useRef } from "react"
 import galleryData from "@/data/gallery.json"
 
+const images = galleryData.images.map((i,x)=>({...i,id:x}));
+
 interface GalleryImage {
   id: number
   title: string
@@ -22,7 +24,7 @@ interface Category {
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("tous")
-  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(galleryData.images)
+  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(images)
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({})
@@ -32,7 +34,7 @@ export default function GalleryPage() {
   // Filter images based on category and search
   useEffect(() => {
     setIsTransitioning(true)
-    let filtered = galleryData.images
+    let filtered = images
 
     // Filter by category
     if (selectedCategory !== "tous") {
@@ -181,7 +183,7 @@ export default function GalleryPage() {
                     aria-pressed={selectedCategory === category.id}
                     aria-label={`Filtrer par ${category.name}`}
                   >
-                    {category.name} ({galleryData.images.filter(i=>category.id==="tous"||i.category===category.id).length})
+                    {category.name} ({images.filter(i=>category.id==="tous"||i.category===category.id).length})
                   </button>
                 ))}
               </div>
