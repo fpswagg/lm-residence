@@ -105,7 +105,7 @@ export function Rooms({ rooms, showPrices }: { rooms: Logement[]; showPrices: bo
               aria-labelledby={`room-${r.slug}`}
             >
               <TLink
-                href={`/logements#${r.slug}`}
+                href={`/logements/${r.slug}`}
                 data-room-main
                 data-cursor="Visiter"
                 className={cn(
@@ -166,7 +166,7 @@ export function Rooms({ rooms, showPrices }: { rooms: Logement[]; showPrices: bo
                         <li key={h} className="label text-ebony/60">{h}</li>
                       ))}
                     </ul>
-                    <TLink href={`/logements#${r.slug}`} className="label group inline-flex items-center gap-3">
+                    <TLink href={`/logements/${r.slug}`} className="label group inline-flex items-center gap-3">
                       <span className="link-line">Découvrir</span>
                       <ArrowIcon className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
                     </TLink>

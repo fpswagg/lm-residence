@@ -1,88 +1,63 @@
-"use client"
-import { LegacyPage } from "@/components/site/legacy-page"
+import type { Metadata } from "next"
+import { PageHead } from "@/components/kit/page-head"
+import { Accordion } from "@/components/kit/accordion"
+import { Button } from "@/components/kit/button"
+import { policies } from "@/lib/policies"
 
+export const metadata: Metadata = {
+  title: "Conditions de séjour",
+  description: "Horaires d’arrivée et de départ, annulation, paiement et règles de la maison à L.M. Résidence, Yaoundé.",
+  alternates: { canonical: "/politiques" },
+}
 
-export default function PoliciesPage() {
+export default function PolitiquesPage() {
   return (
-    <LegacyPage>
-
-      <main className="min-h-screen bg-background">
-        {/* Header */}
-        <section className="bg-primary text-primary-foreground py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4">Politiques & Horaires</h1>
-            <p className="text-lg opacity-90">Informations importantes pour votre séjour</p>
-          </div>
-        </section>
-
-        {/* Policies Content */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-12">
-              {/* Check-in/Check-out */}
-              <div className="bg-cream rounded-lg p-8 border border-border">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">Horaires d'Arrivée et de Départ</h2>
-                <div className="space-y-3 text-foreground/80">
-                  <p>
-                    <strong>Check-in:</strong> À partir de 14h00
-                  </p>
-                  <p>
-                    <strong>Check-out:</strong> Avant 11h00
-                  </p>
-                  <p className="text-sm">
-                    Des arrangements spéciaux peuvent être faits selon la disponibilité. Veuillez nous contacter.
-                  </p>
-                </div>
-              </div>
-
-              {/* Cancellation Policy */}
-              <div className="bg-cream rounded-lg p-8 border border-border">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">Politique d'Annulation</h2>
-                <div className="space-y-3 text-foreground/80">
-                  <p>• Annulation gratuite jusqu'à 7 jours avant l'arrivée</p>
-                  <p>• 50% de frais d'annulation entre 3 et 7 jours</p>
-                  <p>• 100% de frais d'annulation moins de 3 jours avant l'arrivée</p>
-                </div>
-              </div>
-
-              {/* House Rules */}
-              <div className="bg-cream rounded-lg p-8 border border-border">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">Règles de la Résidence</h2>
-                <div className="space-y-3 text-foreground/80">
-                  <p>• Respecter le calme après 22h00</p>
-                  <p>• Pas de fumer à l'intérieur des logements</p>
-                  <p>• Les animaux de compagnie ne sont pas autorisés</p>
-                  <p>• Respecter les installations et équipements</p>
-                  <p>• Pas de fêtes ou réunions sans autorisation préalable</p>
-                </div>
-              </div>
-
-              {/* Payment Terms */}
-              <div className="bg-cream rounded-lg p-8 border border-border">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">Conditions de Paiement</h2>
-                <div className="space-y-3 text-foreground/80">
-                  <p>• Acompte de 30% requis à la réservation</p>
-                  <p>• Solde à payer à l'arrivée</p>
-                  <p>• Nous acceptons les virements bancaires et les paiements en espèces</p>
-                </div>
-              </div>
-
-              {/* Amenities */}
-              <div className="bg-cream rounded-lg p-8 border border-border">
-                <h2 className="text-2xl font-serif font-bold text-primary mb-4">Services Inclus</h2>
-                <div className="space-y-3 text-foreground/80">
-                  <p>• WiFi haute vitesse gratuit</p>
-                  <p>• Climatisation</p>
-                  <p>• Nettoyage quotidien</p>
-                  <p>• Accès à la sécurité 24h/24</p>
-                  <p>• Assistance concierge</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-    </LegacyPage>
+    <>
+      <PageHead
+        n="01"
+        eyebrow="Conditions"
+        title={
+          <>
+            Les règles <em className="display-italic text-brass-deep">simples</em> de la maison
+          </>
+        }
+        intro="Pour que tout le monde y soit bien. Une question sur un cas particulier ? Écrivez-nous, on trouve toujours un arrangement."
+        className="pb-10 md:pb-14"
+      />
+      <section data-theme="light" className="bg-paper pb-[clamp(5rem,10vw,9rem)]" aria-label="Conditions de séjour">
+        <div className="shell grid-12 gap-y-12">
+          <nav aria-label="Sommaire" className="col-span-12 lg:col-span-3">
+            <ol className="space-y-3 lg:sticky lg:top-32">
+              {policies.map((p, i) => (
+                <li key={p.id} className="label num text-ebony/55">
+                  <span className="mr-3 text-brass-deep">{String(i + 1).padStart(2, "0")}</span>
+                  {p.title}
+                </li>
+              ))}
+            </ol>
+          </nav>
+          <Accordion
+            className="col-span-12 lg:col-span-8 lg:col-start-5"
+            numbered
+            defaultOpen={0}
+            items={policies.map((p) => ({
+              title: p.title,
+              meta: p.meta,
+              content: (
+                <ul className="space-y-2">
+                  {p.lines.map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+                </ul>
+              ),
+            }))}
+          />
+        </div>
+        <div className="shell mt-16 flex flex-wrap gap-3">
+          <Button href="/reservation">Demander une réservation</Button>
+          <Button href="/contact" variant="outline" icon="none">Une question</Button>
+        </div>
+      </section>
+    </>
   )
 }

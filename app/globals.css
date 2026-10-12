@@ -119,17 +119,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Anciennes couleurs, encore utilisées par les pages pas encore refaites (phases 3–4). */
-  --color-dark-walnut: #2d1f15;
-  --color-mahogany: #5c3d2e;
-  --color-oak: #8b6f47;
-  --color-light-wood: #b8956a;
-  --color-warm-cream: #f8f4ef;
-  --color-aged-paper: #ede8e0;
-  --color-forest-green: #4a6741;
-  --color-bronze: #cd9a51;
-  --color-sand: #d4c5b0;
 }
 
 /* ------------------------------------------------------------------------------------------------

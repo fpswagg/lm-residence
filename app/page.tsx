@@ -7,9 +7,9 @@ import { GaleriePreview } from "@/components/home/galerie-preview"
 import { Adresse } from "@/components/home/adresse"
 import { logements, minPrice, fcfa } from "@/lib/logements"
 import { photo } from "@/lib/photos"
+import { showPrices } from "@/lib/site"
 
-// Affichage des prix: en attente de la réponse du propriétaire (§8). Par défaut, affichés.
-const SHOW_PRICES = true
+const SHOW_PRICES = showPrices
 
 export default function Home() {
   return (

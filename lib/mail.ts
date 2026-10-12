@@ -20,35 +20,24 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-export async function contact_us(
-  name: string,
-  email: string,
-  telephone: string|null|undefined,
-  message: string
-) {
-  return await transporter.sendMail({
-    from: user,
-    to: devEmail,
-    subject: "Message de L.M. Résidence",
-    text: `
-Nouveau message de ${name}
+const esc = (v: string) => v.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!)
+const nl2br = (v: string) => esc(v).replace(/\n/g, "<br>")
+const row = (k: string, v: string) => `<p style="margin:4px 0"><strong>${k} :</strong> ${esc(v)}</p>`
+const frame = (title: string, body: string) => `
+  <div style="font-family: Georgia, serif; color: #15110d; background: #f3ede3; padding: 24px;">
+    <h2 style="font-weight: normal; margin: 0 0 16px;">${esc(title)}</h2>
+    ${body}
+  </div>`
 
-Nom : ${name}
-Email : ${email}
-${telephone&&`
-  Telephone : ${telephone}`}Message : 
-${message}`,
-    html: `
-      <div style="font-family: Arial, sans-serif; color: #222;">
-        <h2 style="color: #1976d2;">Nouveau message de ${name}</h2>
-        <p><strong>Email :</strong> ${email}</p>
-        <hr style="margin: 20px 0;">
-        ${telephone&&`<p><strong>Telephone :</strong> ${telephone}</p>`}
-        <p><strong>Message :</strong></p>
-        <p style="margin-left: 16px;">${message}</p>
-      </div>
-    `,
-  });
+export async function contact_us(name: string, email: string, telephone: string | null | undefined, message: string) {
+  const text = [`Nouveau message de ${name}`, "", `Nom : ${name}`, `Email : ${email}`, telephone ? `Téléphone : ${telephone}` : null, "", "Message :", message]
+    .filter((l) => l !== null)
+    .join("\n")
+  const html = frame(
+    `Nouveau message de ${name}`,
+    `${row("Email", email)}${telephone ? row("Téléphone", telephone) : ""}<hr style="border:0;border-top:1px solid #ccc;margin:16px 0"><p>${nl2br(message)}</p>`,
+  )
+  return await transporter.sendMail({ from: user, to: devEmail, replyTo: email, subject: "Message de L.M. Résidence", text, html })
 }
 
 export async function reservation(
@@ -59,42 +48,21 @@ export async function reservation(
   dateArrivee: string,
   dateDepart: string,
   nombrePersonnes: string,
-  message: string|null|undefined
+  message: string | null | undefined,
 ) {
-  return await transporter.sendMail({
-    from: user,
-    to: devEmail,
-    subject: "Nouvelle réservation de L.M. Résidence",
-    text: `
-Nouvelle réservation
-
-Nom : ${nom}
-Email : ${email}
-Téléphone : ${telephone}
-Logement : ${logement}
-Date d'arrivée : ${dateArrivee}
-Date de départ : ${dateDepart}
-Nombre de personnes : ${nombrePersonnes}
-${message&&`
-Message : 
-${message}`}
-    `,
-    html: `
-      <div style="font-family: Arial, sans-serif; color: #222;">
-        <h2 style="color: #1976d2;">Nouvelle réservation L.M. Résidence</h2>
-        <p><strong>Nom :</strong> ${nom}</p>
-        <p><strong>Email :</strong> ${email}</p>
-        <p><strong>Téléphone :</strong> ${telephone}</p>
-        <p><strong>Logement :</strong> ${logement}</p>
-        <p><strong>Date d'arrivée :</strong> ${dateArrivee}</p>
-        <p><strong>Date de départ :</strong> ${dateDepart}</p>
-        <p><strong>Nombre de personnes :</strong> ${nombrePersonnes}</p>
-        <hr style="margin: 20px 0;">
-        ${message&&`
-        <p><strong>Message :</strong></p>
-        <p style="margin-left: 16px;">${message}</p>
-        `}
-      </div>
-    `,
-  });
+  const rows: [string, string][] = [
+    ["Nom", nom],
+    ["Email", email],
+    ["Téléphone", telephone],
+    ["Logement", logement],
+    ["Arrivée", dateArrivee],
+    ["Départ", dateDepart],
+    ["Personnes", nombrePersonnes],
+  ]
+  const text = ["Nouvelle demande de réservation", "", ...rows.map(([k, v]) => `${k} : ${v}`), ...(message ? ["", "Message :", message] : [])].join("\n")
+  const html = frame(
+    "Nouvelle demande de réservation",
+    rows.map(([k, v]) => row(k, v)).join("") + (message ? `<hr style="border:0;border-top:1px solid #ccc;margin:16px 0"><p>${nl2br(message)}</p>` : ""),
+  )
+  return await transporter.sendMail({ from: user, to: devEmail, replyTo: email, subject: `Réservation ${logement} · ${dateArrivee} → ${dateDepart}`, text, html })
 }
