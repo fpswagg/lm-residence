@@ -3,77 +3,86 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ------------------------------------------------------------------------------------------------
+   L.M. Résidence — design tokens
+   Papier / ébène en alternance, laiton en accent rare, sauge en secondaire, terre cuite en micro-accent.
+   ------------------------------------------------------------------------------------------------ */
 :root {
-  /* Dark wood theme as default */
-  --background: #1a1612;
-  --foreground: #f8f4ef;
-  --card: #2d1f15;
-  --card-foreground: #f8f4ef;
-  --popover: #2d1f15;
-  --popover-foreground: #f8f4ef;
-  --primary: #cd9a51;
-  --primary-foreground: #1a1612;
-  --secondary: #5c3d2e;
-  --secondary-foreground: #f8f4ef;
-  --muted: #3d2817;
-  --muted-foreground: #b8956a;
-  --accent: #7a9278;
-  --accent-foreground: #f8f4ef;
-  --destructive: #8b4513;
-  --destructive-foreground: #f8f4ef;
-  --border: #5c3d2e;
-  --input: #3d2817;
-  --ring: #cd9a51;
-  --chart-1: #cd9a51;
-  --chart-2: #7a9278;
-  --chart-3: #8b6f47;
-  --chart-4: #b8956a;
-  --chart-5: #4a6741;
-  --radius: 0.625rem;
-  --sidebar: #2d1f15;
-  --sidebar-foreground: #f8f4ef;
-  --sidebar-primary: #cd9a51;
-  --sidebar-primary-foreground: #1a1612;
-  --sidebar-accent: #5c3d2e;
-  --sidebar-accent-foreground: #f8f4ef;
-  --sidebar-border: #5c3d2e;
-  --sidebar-ring: #cd9a51;
+  --paper: #f3ede3;
+  --paper-2: #e9e0d0;
+  --paper-3: #ddd2bf;
+  --ebony: #15110d;
+  --ebony-2: #1f1a15;
+  --ebony-3: #2c251e;
+  --brass: #b58a45;
+  --brass-deep: #84632d; /* laiton lisible sur papier (AA) */
+  --brass-light: #d9b779; /* laiton lisible sur ébène */
+  --sage: #7a9278;
+  --sage-deep: #4f6550;
+  --terracotta: #a8553a;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* expo.out */
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1); /* expo.inOut */
+  --gutter: clamp(1.25rem, 4.5vw, 5rem);
+  --header-h: 5rem;
+
+  /* shadcn/ui (formulaires) */
+  --background: var(--paper);
+  --foreground: var(--ebony);
+  --card: var(--paper);
+  --card-foreground: var(--ebony);
+  --popover: var(--paper);
+  --popover-foreground: var(--ebony);
+  --primary: var(--ebony);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ebony);
+  --muted: var(--paper-2);
+  --muted-foreground: #5d544a;
+  --accent: var(--sage);
+  --accent-foreground: var(--paper);
+  --destructive: var(--terracotta);
+  --destructive-foreground: var(--paper);
+  --border: rgb(21 17 13 / 0.16);
+  --input: rgb(21 17 13 / 0.24);
+  --ring: var(--brass-deep);
+  --radius: 0.25rem;
+  --chart-1: var(--brass);
+  --chart-2: var(--sage);
+  --chart-3: var(--terracotta);
+  --chart-4: var(--paper-3);
+  --chart-5: var(--ebony-3);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ebony);
+  --sidebar-primary: var(--ebony);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--paper-2);
+  --sidebar-accent-foreground: var(--ebony);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback";
-  --font-serif: "Playfair Display", "Playfair Display Fallback";
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 
-  /* Enhanced Artisanal Wood Theme - Rich, Warm Palette */
-  --color-dark-walnut: #2d1f15;
-  --color-mahogany: #5c3d2e;
-  --color-oak: #8b6f47;
-  --color-light-wood: #b8956a;
-  --color-warm-cream: #f8f4ef;
-  --color-aged-paper: #ede8e0;
-  --color-sage: #7a9278;
-  --color-forest-green: #4a6741;
-  --color-brass: #b8944d;
-  --color-bronze: #cd9a51;
-  --color-sand: #d4c5b0;
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ebony: var(--ebony);
+  --color-ebony-2: var(--ebony-2);
+  --color-ebony-3: var(--ebony-3);
+  --color-brass: var(--brass);
+  --color-brass-deep: var(--brass-deep);
+  --color-brass-light: var(--brass-light);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-terracotta: var(--terracotta);
 
-  /* Dark wood theme semantic tokens */
-  --background: #1a1612;
-  --foreground: #f8f4ef;
-  --primary: #cd9a51;
-  --primary-foreground: #1a1612;
-  --secondary: #5c3d2e;
-  --secondary-foreground: #f8f4ef;
-  --accent: #7a9278;
-  --accent-foreground: #f8f4ef;
-  --muted: #3d2817;
-  --muted-foreground: #b8956a;
-  --border: #5c3d2e;
-  --input: #2d1f15;
-  --ring: #cd9a51;
-  --radius: 0.5rem;
+  --ease-expo: var(--ease-out);
+  --ease-expo-in-out: var(--ease-in-out);
 
-  /* Additional semantic colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -98,10 +107,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -110,142 +119,231 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
-  /* Additional artisanal colors for components */
+
+  /* Anciennes couleurs, encore utilisées par les pages pas encore refaites (phases 3–4). */
   --color-dark-walnut: #2d1f15;
   --color-mahogany: #5c3d2e;
   --color-oak: #8b6f47;
   --color-light-wood: #b8956a;
   --color-warm-cream: #f8f4ef;
   --color-aged-paper: #ede8e0;
-  --color-sage: #7a9278;
   --color-forest-green: #4a6741;
-  --color-brass: #b8944d;
   --color-bronze: #cd9a51;
   --color-sand: #d4c5b0;
 }
 
+/* ------------------------------------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------------------------------------ */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-paper text-ebony font-sans;
+    font-feature-settings: "ss01" 1, "calt" 1;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--ebony);
+    color: var(--paper);
+  }
+  [data-theme="dark"] ::selection {
+    background: var(--brass-light);
+    color: var(--ebony);
+  }
+  :focus-visible {
+    outline: 2px solid var(--brass-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  [data-theme="dark"] :focus-visible {
+    outline-color: var(--brass-light);
+  }
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }
 
-* {
-  @apply border-border;
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
-body {
-  @apply bg-background text-foreground;
-  font-feature-settings: "rlig" 1, "calt" 1;
+/* ------------------------------------------------------------------------------------------------
+   Typographie
+   ------------------------------------------------------------------------------------------------ */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 330;
+  font-variation-settings: "opsz" 144, "SOFT" 40, "WONK" 0;
+  letter-spacing: -0.035em;
+  line-height: 0.86;
+  text-wrap: balance;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-serif font-bold;
+@utility display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
   letter-spacing: -0.02em;
-  color: var(--color-bronze);
 }
-
-h1 {
-  @apply text-4xl md:text-5xl lg:text-6xl;
-  line-height: 1.1;
+@utility serif-text {
+  font-family: var(--font-serif);
+  font-weight: 350;
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  letter-spacing: -0.005em;
 }
-
-h2 {
-  @apply text-3xl md:text-4xl;
-  line-height: 1.2;
+@utility label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
 }
-
-h3 {
-  @apply text-2xl md:text-3xl;
+@utility lede {
+  font-family: var(--font-serif);
+  font-weight: 350;
+  font-variation-settings: "opsz" 36, "SOFT" 50;
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.875rem);
   line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+@utility text-giant {
+  font-size: clamp(4.5rem, 14vw, 15rem);
+}
+@utility text-huge {
+  font-size: clamp(3.25rem, 9vw, 9.5rem);
+}
+@utility text-big {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+}
+@utility text-mid {
+  font-size: clamp(1.875rem, 3.4vw, 3.5rem);
+}
+@utility num {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-p,
-span,
-a,
-button {
-  @apply font-sans;
-  letter-spacing: 0.01em;
-}
-
-p {
-  line-height: 1.7;
-}
-
-/* Enhanced dark wood texture background with grain */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ------------------------------------------------------------------------------------------------
+   Mise en page
+   ------------------------------------------------------------------------------------------------ */
+@utility shell {
   width: 100%;
-  height: 100%;
-  background-image: 
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(205, 154, 81, 0.03) 2px,
-      rgba(205, 154, 81, 0.03) 4px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(92, 61, 46, 0.02) 2px,
-      rgba(92, 61, 46, 0.02) 4px
-    );
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.4;
+  padding-inline: var(--gutter);
+  margin-inline: auto;
+  max-width: 120rem;
+}
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(0.75rem, 1.6vw, 1.75rem);
+}
+@utility hairline {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
 }
 
-/* Subtle paper texture overlay */
-body::after {
-  content: "";
+/* Formes éditoriales pour les photos */
+@utility shape-arch {
+  /* 999px is capped to half the width: a perfect semicircle on top, whatever the size */
+  border-radius: 999px 999px 0 0;
+}
+@utility shape-pill {
+  border-radius: 999px;
+}
+
+/* Lien souligné animé */
+@utility link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.7s var(--ease-out);
+  &:hover,
+  &:focus-visible,
+  &[aria-current="page"] {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
+}
+
+/* Grain (une seule couche fixe, très légère) */
+.grain {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  inset: -50%;
+  z-index: 90;
   pointer-events: none;
-  z-index: -1;
-  mix-blend-mode: overlay;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 1.2 -0.2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+[data-page-theme="dark"] .grain {
+  mix-blend-mode: screen;
+  opacity: 0.05;
 }
 
-/* Smooth transitions */
-* {
-  @apply transition-colors duration-300 ease-out;
+/* Préloader: visible seulement avec JS et à la première visite de la session (classes posées
+   par le script en tête de page). Sans JS, le contenu s'affiche directement. */
+.preloader {
+  display: none;
+}
+html.js:not(.seen) .preloader {
+  display: flex;
 }
 
-button,
-a {
-  @apply transition-all duration-300 ease-out;
+/* Curseur: seulement sur pointeur fin */
+.cursor {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  html.js .cursor {
+    display: block;
+  }
 }
 
-/* Improved scroll behavior */
-html {
-  scroll-behavior: smooth;
+/* Lignes masquées pour les révélations de texte (SplitText) */
+.line-mask {
+  overflow: clip;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
 }
 
-/* Custom selection color for dark theme */
-::selection {
-  background-color: var(--color-bronze);
-  color: var(--color-dark-walnut);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-sage);
-  outline-offset: 2px;
+@keyframes scrollhint {
+  0% { transform: translateY(-100%); }
+  60%, 100% { transform: translateY(200%); }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }

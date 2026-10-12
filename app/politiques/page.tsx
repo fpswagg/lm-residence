@@ -1,12 +1,10 @@
 "use client"
+import { LegacyPage } from "@/components/site/legacy-page"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 
 export default function PoliciesPage() {
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-background">
         {/* Header */}
@@ -85,7 +83,6 @@ export default function PoliciesPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

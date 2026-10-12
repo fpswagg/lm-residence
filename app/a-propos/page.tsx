@@ -1,7 +1,6 @@
 "use client"
+import { LegacyPage } from "@/components/site/legacy-page"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Award, Heart, Shield, Users, Star, Target } from "lucide-react"
 
 export default function AboutPage() {
@@ -33,8 +32,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#f8f4ef] to-[#ede8e0]">
         {/* Header - Enhanced */}
@@ -192,7 +190,6 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

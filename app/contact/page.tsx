@@ -1,9 +1,9 @@
 "use client"
+import { site } from "@/lib/site"
+import { LegacyPage } from "@/components/site/legacy-page"
 
 import type React from "react"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
 
@@ -44,8 +44,7 @@ export default function ContactPage() {
   }
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#f8f4ef] to-[#ede8e0]">
         {/* Header - Enhanced */}
@@ -79,7 +78,7 @@ export default function ContactPage() {
 
                 <div className="space-y-6 mb-12">
                   <a 
-                    href={`tel:${process.env.NEXT_PUBLIC_PHONE!.replaceAll(" ", "")}`}
+                    href={`tel:${site.phone.replaceAll(" ", "")}`}
                     className="group flex gap-4 p-5 bg-white rounded-xl border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-lg transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#7a9278]/20 to-[#cd9a51]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -87,13 +86,13 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Téléphone</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_PHONE}</p>
+                      <p className="text-[#8b6f47]">{site.phone}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Disponible 24/7</p>
                     </div>
                   </a>
 
                   <a 
-                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+                    href={`mailto:${site.email}`}
                     className="group flex gap-4 p-5 bg-white rounded-xl border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-lg transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#cd9a51]/20 to-[#8b6f47]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -101,7 +100,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Email</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_EMAIL}</p>
+                      <p className="text-[#8b6f47]">{site.email}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Réponse sous 24h</p>
                     </div>
                   </a>
@@ -112,7 +111,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Adresse</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_ADDRESS}</p>
+                      <p className="text-[#8b6f47]">{site.address}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Quartier résidentiel</p>
                     </div>
                   </div>
@@ -233,7 +232,6 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

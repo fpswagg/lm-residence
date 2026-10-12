@@ -1,7 +1,7 @@
 "use client"
+import { site } from "@/lib/site"
+import { LegacyPage } from "@/components/site/legacy-page"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { ChefHat, Car, Shield, Sparkles, Shirt } from "lucide-react"
@@ -28,7 +28,7 @@ const serviceIcons: { [key: string]: any } = {
 
 export default function ServicesPage() {
   const router = useRouter();
-  const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!.replace("+", "").replaceAll(" ","")}`;
+  const whatsappUrl = `https://wa.me/${site.phone.replace("+", "").replaceAll(" ","")}`;
 
   const getServiceIcon = (serviceName: string) => {
     for (const key in serviceIcons) {
@@ -40,8 +40,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#f8f4ef] to-[#ede8e0]">
         {/* Header - Enhanced */}
@@ -147,7 +146,6 @@ export default function ServicesPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

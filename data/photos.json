@@ -1,0 +1,52 @@
+{
+  "_doc": "Photos retenues (source: public/images). note 1-5, focal = point d'intérêt pour le recadrage (0..1). Générées par scripts/optimize-images.mjs dans public/img/<id>.jpg",
+  "photos": [
+    { "id": "salle-a-manger-ac", "file": "DSC_0176.JPG", "studio": "alain-christophe", "room": "salle-a-manger", "note": 5, "focal": [0.45, 0.55], "alt": "Table ronde et chaises en bois tourné près de la rambarde en fer forgé, studio Alain-Christophe" },
+    { "id": "mezzanine-ac", "file": "DSC_0177.JPG", "studio": "alain-christophe", "room": "salon", "note": 4, "focal": [0.5, 0.5], "alt": "Vue depuis la mezzanine sur le salon et la cuisine du studio Alain-Christophe" },
+    { "id": "salon-ac", "file": "DSC_0178.JPG", "studio": "alain-christophe", "room": "salon", "note": 4, "focal": [0.55, 0.6], "alt": "Canapé en velours brun et table basse en verre, studio Alain-Christophe" },
+    { "id": "salon-ac-2", "file": "DSC_0179.JPG", "studio": "alain-christophe", "room": "salon", "note": 3, "focal": [0.5, 0.45], "alt": "Salon du studio Alain-Christophe, tapis rouge et canapé" },
+    { "id": "cuisine-ac", "file": "DSC_0180.JPG", "studio": "alain-christophe", "room": "cuisine", "note": 3, "focal": [0.4, 0.5], "alt": "Cuisine carrelée équipée du studio Alain-Christophe" },
+    { "id": "chambre-ac", "file": "DSC_0183.JPG", "studio": "alain-christophe", "room": "chambre", "note": 4, "focal": [0.6, 0.6], "alt": "Chambre lumineuse avec moustiquaire, studio Alain-Christophe" },
+    { "id": "console-ac", "file": "DSC_0184.JPG", "studio": "alain-christophe", "room": "chambre", "note": 3, "focal": [0.5, 0.5], "alt": "Console en bois et miroir, studio Alain-Christophe" },
+    { "id": "salle-de-bain-ac", "file": "DSC_0186.JPG", "studio": "alain-christophe", "room": "salle-de-bain", "note": 2, "focal": [0.5, 0.5], "alt": "Salle de bain du studio Alain-Christophe" },
+
+    { "id": "salon-jp", "file": "DSC_0188.JPG", "studio": "jean-philippe", "room": "salon", "note": 4, "focal": [0.4, 0.55], "alt": "Salon avec canapé bleu, tapis rond et fauteuils, studio Jean-Philippe" },
+    { "id": "fauteuil-jp", "file": "DSC_0189.JPG", "studio": "jean-philippe", "room": "salon", "note": 4, "focal": [0.4, 0.6], "alt": "Fauteuil capitonné et porte vers le balcon, studio Jean-Philippe" },
+    { "id": "salon-jp-2", "file": "DSC_0190.JPG", "studio": "jean-philippe", "room": "salon", "note": 4, "focal": [0.5, 0.6], "alt": "Canapé en cuir bleu et table d'appoint, studio Jean-Philippe" },
+    { "id": "chambre-jp", "file": "DSC_0191.JPG", "studio": "jean-philippe", "room": "chambre", "note": 5, "focal": [0.6, 0.5], "alt": "Lit en bois et linge blanc sous la moustiquaire, studio Jean-Philippe" },
+    { "id": "chambre-jp-2", "file": "DSC_0193.JPG", "studio": "jean-philippe", "room": "chambre", "note": 4, "focal": [0.5, 0.45], "alt": "Lit double et lampe de chevet, studio Jean-Philippe" },
+    { "id": "bain-jp", "file": "DSC_0194.JPG", "studio": "jean-philippe", "room": "salle-de-bain", "note": 3, "focal": [0.5, 0.5], "alt": "Salle de bain avec baignoire, studio Jean-Philippe" },
+    { "id": "balcon-jp", "file": "DSC_0196.JPG", "studio": "jean-philippe", "room": "balcon", "note": 4, "focal": [0.25, 0.5], "alt": "Porte ouverte sur le balcon et la ville, studio Jean-Philippe" },
+    { "id": "table-jp", "file": "DSC_0197.JPG", "studio": "jean-philippe", "room": "salle-a-manger", "note": 4, "focal": [0.55, 0.65], "alt": "Table à manger en bois et chaises rouges, studio Jean-Philippe" },
+    { "id": "cuisine-jp", "file": "DSC_0198.JPG", "studio": "jean-philippe", "room": "cuisine", "note": 3, "focal": [0.5, 0.5], "alt": "Kitchenette en marbre avec gazinière et micro-ondes, studio Jean-Philippe" },
+    { "id": "casseroles-jp", "file": "DSC_0199.JPG", "studio": "jean-philippe", "room": "cuisine", "note": 3, "focal": [0.6, 0.45], "alt": "Étagère en bois et casseroles, studio Jean-Philippe" },
+
+    { "id": "chambre-marie", "file": "DSC_0158.JPG", "studio": "marie", "room": "chambre", "note": 4, "focal": [0.6, 0.6], "alt": "Lit en acajou et couvre-lit rouge, chambre Marie" },
+    { "id": "chambre-marie-2", "file": "DSC_0159.JPG", "studio": "marie", "room": "chambre", "note": 3, "focal": [0.6, 0.6], "alt": "Chambre Marie, lit double et tables de chevet" },
+    { "id": "bain-marie", "file": "DSC_0161.JPG", "studio": "marie", "room": "salle-de-bain", "note": 4, "focal": [0.6, 0.55], "alt": "Baignoire d'angle carrelée, chambre Marie" },
+    { "id": "bain-marie-2", "file": "DSC_0160.JPG", "studio": "marie", "room": "salle-de-bain", "note": 3, "focal": [0.5, 0.55], "alt": "Baignoire d'angle, chambre Marie" },
+    { "id": "coin-marie", "file": "DSC_0164.JPG", "studio": "marie", "room": "chambre", "note": 3, "focal": [0.5, 0.5], "alt": "Fauteuil sculpté et télévision, chambre Marie" },
+    { "id": "penderie-marie", "file": "DSC_0165.JPG", "studio": "marie", "room": "chambre", "note": 3, "focal": [0.5, 0.5], "alt": "Penderie en bois et linge, chambre Marie" },
+
+    { "id": "salon-camilla", "file": "DSC_0139.JPG", "studio": "camilla", "room": "salon", "note": 3, "focal": [0.4, 0.6], "alt": "Salon du studio Camilla, canapé et table ronde" },
+    { "id": "cuisine-camilla", "file": "DSC_0141.JPG", "studio": "camilla", "room": "cuisine", "note": 3, "focal": [0.7, 0.4], "alt": "Étagère de cuisine en bois, studio Camilla" },
+    { "id": "sejour-camilla", "file": "DSC_0143.JPG", "studio": "camilla", "room": "salon", "note": 4, "focal": [0.45, 0.6], "alt": "Séjour du studio Camilla, fauteuil, comptoir en bois et coin repas" },
+    { "id": "chambre-camilla", "file": "DSC_0145.JPG", "studio": "camilla", "room": "chambre", "note": 3, "focal": [0.55, 0.6], "alt": "Chambre du studio Camilla, lit et couvre-lit rouge" },
+    { "id": "fauteuil-camilla", "file": "DSC_0149.JPG", "studio": "camilla", "room": "salon", "note": 3, "focal": [0.4, 0.55], "alt": "Fauteuil et meuble télé, studio Camilla" },
+
+    { "id": "enseigne", "file": "DSC_0168.JPG", "studio": null, "room": "exterieur", "note": 5, "focal": [0.5, 0.5], "alt": "Enseigne sculptée « Résidence Hôtelière Lucien Marie »" },
+    { "id": "facade", "file": "DSC_0170.JPG", "studio": null, "room": "exterieur", "note": 4, "focal": [0.5, 0.45], "alt": "Façade blanche et terre cuite de la résidence" },
+    { "id": "facade-2", "file": "DSC_0172.JPG", "studio": null, "room": "exterieur", "note": 4, "focal": [0.5, 0.5], "alt": "La résidence entre les palmiers" },
+    { "id": "escalier", "file": "DSC_0173.JPG", "studio": null, "room": "entree", "note": 5, "focal": [0.55, 0.5], "alt": "Escalier d'entrée aux murs terre cuite et porte en bois" },
+    { "id": "salon-commun", "file": "DSC_0174.JPG", "studio": null, "room": "espaces-communs", "note": 4, "focal": [0.5, 0.55], "alt": "Petite table et chaises sur fond terre cuite" },
+    { "id": "reception", "file": "DSC_0153.JPG", "studio": null, "room": "espaces-communs", "note": 4, "focal": [0.5, 0.4], "alt": "Hall de réception, tapis rouge et meuble en bois" },
+    { "id": "comptoir", "file": "DSC_0154.JPG", "studio": null, "room": "espaces-communs", "note": 5, "focal": [0.5, 0.5], "alt": "Comptoir de réception en bois et statuette" },
+    { "id": "applique", "file": "DSC_0157.JPG", "studio": null, "room": "details", "note": 5, "focal": [0.45, 0.4], "alt": "Applique murale en bois et cuivre allumée" },
+    { "id": "tableau", "file": "DSC_0201.JPG", "studio": null, "room": "details", "note": 4, "focal": [0.5, 0.35], "alt": "Tableau de fruits aux couleurs vives" },
+    { "id": "palmier", "file": "DSC_0202.JPG", "studio": null, "room": "exterieur", "note": 4, "focal": [0.5, 0.4], "alt": "Cime d'un palmier contre le ciel" },
+    { "id": "salle-commune", "file": "DSC_0204.JPG", "studio": null, "room": "espaces-communs", "note": 3, "focal": [0.5, 0.5], "alt": "Salle de restauration commune, sculptures et vaisselier" },
+    { "id": "sculptures", "file": "DSC_0206.JPG", "studio": null, "room": "details", "note": 4, "focal": [0.6, 0.45], "alt": "Sculptures et poteries traditionnelles sur un buffet laqué" },
+    { "id": "accueil", "file": "DSC_0208.JPG", "studio": null, "room": "espaces-communs", "note": 4, "focal": [0.45, 0.6], "alt": "Bureau d'accueil en bois sculpté" },
+    { "id": "terrasse", "file": "DSC_0210.JPG", "studio": null, "room": "exterieur", "note": 4, "focal": [0.5, 0.6], "alt": "Terrasse couverte avec banquettes et ferronnerie" }
+  ]
+}

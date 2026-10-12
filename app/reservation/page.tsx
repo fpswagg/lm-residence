@@ -1,9 +1,8 @@
 "use client"
+import { LegacyPage } from "@/components/site/legacy-page"
 
 import type React from "react"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { useState } from "react"
 import { useSearchParams } from "next/navigation"
 
@@ -60,8 +59,7 @@ export default function ReservationPage() {
   }
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#f8f4ef] to-[#ede8e0]">
         {/* Header - Enhanced */}
@@ -249,7 +247,6 @@ export default function ReservationPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

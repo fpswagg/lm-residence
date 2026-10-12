@@ -1,7 +1,6 @@
 "use client"
+import { LegacyPage } from "@/components/site/legacy-page"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Check, Users, Maximize2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
@@ -59,8 +58,7 @@ export default function LogementsPage() {
   }
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#1a1612] to-[#2d1f15]">
         {/* Header - Enhanced */}
@@ -274,7 +272,6 @@ export default function LogementsPage() {
         </section>
       </main>
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

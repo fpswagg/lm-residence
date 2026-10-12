@@ -1,7 +1,6 @@
 "use client"
+import { LegacyPage } from "@/components/site/legacy-page"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import { Camera, Maximize2, Filter, X, ChevronLeft, ChevronRight, Search, Loader2 } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import galleryData from "@/data/gallery.json"
@@ -107,8 +106,7 @@ export default function GalleryPage() {
   }
 
   return (
-    <>
-      <Navigation />
+    <LegacyPage>
 
       <main className="min-h-screen bg-gradient-to-b from-[#1a1612] to-[#2d1f15]">
         {/* Header - Enhanced */}
@@ -399,7 +397,6 @@ export default function GalleryPage() {
         </div>
       )}
 
-      <Footer />
-    </>
+    </LegacyPage>
   )
 }

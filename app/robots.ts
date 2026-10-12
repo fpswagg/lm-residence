@@ -1,7 +1,8 @@
+import { site } from "@/lib/site"
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!
+  const baseUrl = site.url
   
   return {
     rules: {

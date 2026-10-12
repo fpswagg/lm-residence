@@ -1,9 +1,10 @@
+import { site } from "@/lib/site"
 import { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!
+  const baseUrl = site.url
   
   // Pages statiques
   const staticPages = [

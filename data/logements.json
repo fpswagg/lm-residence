@@ -27,9 +27,27 @@
             "/images/DSC_0191.JPG",
             "/images/DSC_0192.JPG",
             "/images/DSC_0189.JPG",
-            "/images/DSC_0194.JPG",
-            "/images/DSC_0188.JPG"
-        ]
+            "/images/DSC_0194.JPG"
+        ],
+        "slug": "jean-philippe",
+        "highlights": [
+            "Balcon avec vue",
+            "Baignoire",
+            "45 m²"
+        ],
+        "photos": [
+            "chambre-jp",
+            "salon-jp",
+            "fauteuil-jp",
+            "balcon-jp",
+            "table-jp",
+            "chambre-jp-2",
+            "salon-jp-2",
+            "bain-jp",
+            "cuisine-jp",
+            "casseroles-jp"
+        ],
+        "accroche": "Le plus lumineux, avec son balcon sur la ville."
     },
     {
         "id": 2,
@@ -60,7 +78,24 @@
             "/images/DSC_0183.JPG",
             "/images/DSC_0184.JPG",
             "/images/DSC_0186.JPG"
-        ]
+        ],
+        "slug": "alain-christophe",
+        "highlights": [
+            "Mezzanine",
+            "Fer forgé",
+            "45 m²"
+        ],
+        "photos": [
+            "salle-a-manger-ac",
+            "mezzanine-ac",
+            "salon-ac",
+            "chambre-ac",
+            "salon-ac-2",
+            "console-ac",
+            "cuisine-ac",
+            "salle-de-bain-ac"
+        ],
+        "accroche": "Une table ronde contre la rambarde en fer forgé, et le salon en contrebas."
     },
     {
         "id": 3,
@@ -85,7 +120,22 @@
             "/images/DSC_0165.JPG",
             "/images/DSC_0160.JPG",
             "/images/DSC_0161.JPG"
-        ]
+        ],
+        "slug": "marie",
+        "highlights": [
+            "Baignoire d'angle",
+            "Bureau",
+            "20 m²"
+        ],
+        "photos": [
+            "chambre-marie",
+            "bain-marie",
+            "coin-marie",
+            "chambre-marie-2",
+            "bain-marie-2",
+            "penderie-marie"
+        ],
+        "accroche": "Une chambre pour une ou deux personnes, avec sa baignoire d'angle."
     },
     {
         "id": 4,
@@ -114,6 +164,20 @@
             "/images/DSC_0141.JPG",
             "/images/DSC_0143.JPG",
             "/images/DSC_0145.JPG"
-        ]
+        ],
+        "slug": "camilla",
+        "highlights": [
+            "Terrasse",
+            "Douche",
+            "45 m²"
+        ],
+        "photos": [
+            "sejour-camilla",
+            "salon-camilla",
+            "chambre-camilla",
+            "fauteuil-camilla",
+            "cuisine-camilla"
+        ],
+        "accroche": "De plain-pied, avec sa terrasse et son coin repas."
     }
 ]
