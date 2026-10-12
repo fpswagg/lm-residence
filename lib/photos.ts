@@ -38,3 +38,17 @@ export function photo(id: string): Photo {
 
 export const photos = [...byId.values()]
 export const photosOf = (studio: string) => photos.filter((p) => p.studio === studio).sort((a, b) => b.note - a.note)
+
+const ROOMS: Record<string, string> = {
+  salon: "Salon",
+  chambre: "Chambre",
+  cuisine: "Cuisine",
+  "salle-de-bain": "Salle de bain",
+  "salle-a-manger": "Salle à manger",
+  balcon: "Balcon",
+  exterieur: "Extérieur",
+  entree: "Entrée",
+  "espaces-communs": "Espaces communs",
+  details: "Détails",
+}
+export const roomLabel = (room: string) => ROOMS[room] ?? room

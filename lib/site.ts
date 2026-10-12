@@ -32,3 +32,6 @@ export const nav = [
 
 /** Vidéo d'ambiance du premier écran (mp4/webm léger, ~20 s, sans son). null: la photo. */
 export const heroVideo: { src: string } | null = null
+
+/** Affichage des prix: en attente de la réponse du propriétaire (§8). Par défaut, affichés. */
+export const showPrices = true
