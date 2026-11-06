@@ -153,6 +153,9 @@ export function Footer() {
             <Link href="/politiques" className="hover:text-[#cd9a51] transition-colors">
               Conditions d'utilisation
             </Link>
+            <Link href="/dashboard" rel="nofollow" className="hover:text-[#cd9a51] transition-colors">
+              Espace équipe
+            </Link>
           </div>
         </div>
       </div>

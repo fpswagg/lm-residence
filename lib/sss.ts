@@ -11,7 +11,7 @@ const API = (process.env.SSS_API_URL || "https://sss-api.fpswagg.site").replace(
 const SLUG = process.env.SSS_STORE_SLUG || "lucien-marie-residence"
 const BASE = `${API}/api/v1/stores/${SLUG}/showcase`
 
-const BLOCS = {
+export const BLOCS = {
   galerie: { id: "c_8iy6s8r6", name: "Galerie du site" },
   textes: { id: "c_hrnxse3r", name: "Textes du site" },
   regles: { id: "c_cb616crn", name: "Règles du séjour" },
