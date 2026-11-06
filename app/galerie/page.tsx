@@ -4,9 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Camera, Maximize2, Filter, X, ChevronLeft, ChevronRight, Search, Loader2 } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
-import galleryData from "@/data/gallery.json"
-
-const images = galleryData.images.map((i,x)=>({...i,id:x}));
+import { useSite, useTextes } from "@/components/site-provider"
 
 interface GalleryImage {
   id: number
@@ -23,6 +21,10 @@ interface Category {
 }
 
 export default function GalleryPage() {
+  const { galerie: images, categories } = useSite()
+  const t = useTextes()
+  const page = t("Page Galerie")
+  const invitation = t("Galerie - Invitation")
   const [selectedCategory, setSelectedCategory] = useState<string>("tous")
   const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(images)
   const [searchQuery, setSearchQuery] = useState<string>("")
@@ -123,9 +125,9 @@ export default function GalleryPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">Galerie</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Découvrez les espaces élégants et chaleureux de L.M. Résidence à travers notre galerie photo
+              {page.texte}
             </p>
           </div>
         </section>
@@ -171,7 +173,7 @@ export default function GalleryPage() {
                 )}
               </div>
               <div className="flex flex-wrap gap-3">
-                {galleryData.categories.map((category) => (
+                {categories.map((category) => (
                   <button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
@@ -289,10 +291,10 @@ export default function GalleryPage() {
             {/* Call to action */}
             <div className="mt-16 text-center p-10 bg-[#2d1f15] rounded-2xl border-2 border-[#5c3d2e] shadow-2xl">
               <h2 className="text-3xl font-serif font-bold text-[#cd9a51] mb-4">
-                Envie de Découvrir Nos Espaces en Personne ?
+                {invitation.titre}
               </h2>
               <p className="text-[#f8f4ef]/80 mb-8 max-w-2xl mx-auto text-lg">
-                Réservez une visite ou contactez-nous pour plus d'informations sur nos logements et services.
+                {invitation.texte}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

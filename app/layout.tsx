@@ -2,31 +2,36 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import "./globals.css"
-import keywords from "@/data/keywords.json"
+import { getSite } from "@/lib/sss"
+import { SiteProvider } from "@/components/site-provider"
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" })
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
-export const metadata: Metadata = {
-  title: "Lucien Marie Résidence – Studios haut de gamme à Yaoundé",
-  description:
-    "Lucien Marie Résidence (L.M. Résidence) est un cadre résidentiel élégant et sécurisé situé à Yaoundé, au cœur du Cameroun. Trois studios modernes et une chambre individuelle y sont à disposition, alliant confort, autonomie, services personnalisés, cuisinier sur place, véhicule avec chauffeur et sécurité DAK 24/7. Idéal pour professionnels, expatriés, étudiants ou visiteurs recherchant un environnement calme, fonctionnel et raffiné, pour un séjour court ou long.",
-  keywords,
-  icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await getSite()
+  return {
+    title: seo.titre,
+    description: seo.description,
+    keywords: seo.motsCles,
+    icons: {
+      icon: "/logo.png",
+      shortcut: "/logo.png",
+      apple: "/logo.png",
+    },
   }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-background text-foreground">{children}</body>
+      <body className="bg-background text-foreground">
+        <SiteProvider site={await getSite()}>{children}</SiteProvider>
+      </body>
     </html>
   )
 }

@@ -6,8 +6,11 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { useSite, useTextes } from "@/components/site-provider"
 
 export default function ContactPage() {
+  const { contact, horaires } = useSite()
+  const page = useTextes()("Page Contact")
   const [formData, setFormData] = useState({
     nom: "",
     email: "",
@@ -15,6 +18,7 @@ export default function ContactPage() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -25,6 +29,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setFailed(false)
 
     try {
       const response = await fetch("/api/contact", {
@@ -37,9 +42,12 @@ export default function ContactPage() {
         setSubmitted(true)
         setFormData({ nom: "", email: "", telephone: "", message: "" })
         setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        setFailed(true)
       }
     } catch (error) {
       console.error("Error submitting form:", error)
+      setFailed(true)
     }
   }
 
@@ -59,9 +67,9 @@ export default function ContactPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">Nous Contacter</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Nous sommes à votre écoute pour toute question ou demande d'information
+              {page.texte}
             </p>
           </div>
         </section>
@@ -79,7 +87,7 @@ export default function ContactPage() {
 
                 <div className="space-y-6 mb-12">
                   <a 
-                    href={`tel:${process.env.NEXT_PUBLIC_PHONE!.replaceAll(" ", "")}`}
+                    href={`tel:${contact.phone.replaceAll(" ", "")}`}
                     className="group flex gap-4 p-5 bg-white rounded-xl border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-lg transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#7a9278]/20 to-[#cd9a51]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -87,13 +95,13 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Téléphone</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_PHONE}</p>
+                      <p className="text-[#8b6f47]">{contact.phone}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Disponible 24/7</p>
                     </div>
                   </a>
 
                   <a 
-                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
+                    href={`mailto:${contact.email}`}
                     className="group flex gap-4 p-5 bg-white rounded-xl border-2 border-[#d4c5b0] hover:border-[#cd9a51] hover:shadow-lg transition-all duration-300"
                   >
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#cd9a51]/20 to-[#8b6f47]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -101,7 +109,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Email</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_EMAIL}</p>
+                      <p className="text-[#8b6f47]">{contact.email}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Réponse sous 24h</p>
                     </div>
                   </a>
@@ -112,7 +120,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[#5c3d2e] mb-1">Adresse</p>
-                      <p className="text-[#8b6f47]">{process.env.NEXT_PUBLIC_ADDRESS}</p>
+                      <p className="text-[#8b6f47]">{contact.address}</p>
                       <p className="text-xs text-[#8b6f47]/70 mt-1">Quartier résidentiel</p>
                     </div>
                   </div>
@@ -122,18 +130,12 @@ export default function ContactPage() {
                 <div className="p-8 bg-gradient-to-br from-[#5c3d2e] to-[#8b6f47] rounded-2xl text-[#f8f4ef] border-2 border-[#d4c5b0] shadow-lg">
                   <h3 className="text-xl font-serif font-bold mb-6">Horaires d'Ouverture</h3>
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center pb-3 border-b border-[#f8f4ef]/20">
-                      <span className="text-[#ede8e0]">Lundi - Vendredi</span>
-                      <span className="font-semibold">08:00 - 18:00</span>
-                    </div>
-                    <div className="flex justify-between items-center pb-3 border-b border-[#f8f4ef]/20">
-                      <span className="text-[#ede8e0]">Samedi</span>
-                      <span className="font-semibold">09:00 - 14:00</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[#ede8e0]">Dimanche</span>
-                      <span className="font-semibold">Fermé</span>
-                    </div>
+                    {horaires.map((h, i) => (
+                      <div key={h.jours} className={`flex justify-between items-center${i < horaires.length - 1 ? " pb-3 border-b border-[#f8f4ef]/20" : ""}`}>
+                        <span className="text-[#ede8e0]">{h.jours}</span>
+                        <span className="font-semibold">{h.heures}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -218,6 +220,12 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 border-2 border-[#d4c5b0] rounded-lg bg-[#f8f4ef] text-[#5c3d2e] placeholder:text-[#8b6f47]/50 focus:outline-none focus:ring-2 focus:ring-[#7a9278] focus:border-[#7a9278] transition-all resize-none"
                     ></textarea>
                   </div>
+
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" onChange={handleChange} />
+
+                  {failed && (
+                    <p className="text-sm text-red-700">L'envoi n'a pas abouti. Réessayez, ou appelez-nous au {contact.phone}.</p>
+                  )}
 
                   <button
                     type="submit"

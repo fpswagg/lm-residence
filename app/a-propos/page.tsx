@@ -3,34 +3,23 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Award, Heart, Shield, Users, Star, Target } from "lucide-react"
+import { useSite, useTextes } from "@/components/site-provider"
+
+const VALEURS_STYLE = [
+  { icon: Award, color: "#cd9a51" },
+  { icon: Heart, color: "#7a9278" },
+  { icon: Star, color: "#b8956a" },
+  { icon: Shield, color: "#5c3d2e" },
+]
 
 export default function AboutPage() {
-  const values = [
-    {
-      icon: Award,
-      titre: "Excellence",
-      description: "Nous recherchons l'excellence dans chaque aspect de nos services et installations.",
-      color: "#cd9a51"
-    },
-    {
-      icon: Heart,
-      titre: "Hospitalité",
-      description: "L'accueil chaleureux et authentique est au cœur de notre philosophie et de nos actions.",
-      color: "#7a9278"
-    },
-    {
-      icon: Star,
-      titre: "Qualité",
-      description: "Nous n'acceptons que les meilleurs standards de qualité pour votre confort absolu.",
-      color: "#b8956a"
-    },
-    {
-      icon: Shield,
-      titre: "Sécurité",
-      description: "Votre sécurité et votre tranquillité d'esprit sont nos priorités absolues.",
-      color: "#5c3d2e"
-    },
-  ]
+  const { valeurs, histoire } = useSite()
+  const t = useTextes()
+  const page = t("Page À propos")
+  const nosValeurs = t("Nos valeurs")
+  const equipe = t("Notre équipe")
+  const invitation = t("À propos - Invitation")
+  const values = valeurs.map((v, i) => ({ ...v, ...VALEURS_STYLE[i % VALEURS_STYLE.length] }))
 
   return (
     <>
@@ -49,9 +38,9 @@ export default function AboutPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">À Propos de Nous</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Découvrez l'histoire, les valeurs et l'équipe qui font de L.M. Résidence un lieu d'exception
+              {page.texte}
             </p>
           </div>
         </section>
@@ -68,20 +57,7 @@ export default function AboutPage() {
                     Notre Histoire
                   </h2>
                   <div className="space-y-4 text-[#5c3d2e]/80 leading-relaxed">
-                    <p>
-                      L.M. Résidence est née de la vision de créer un espace d'accueil exceptionnel à Yaoundé, 
-                      où le confort artisanal rencontre l'excellence moderne. Depuis sa création, nous nous 
-                      engageons à offrir une expérience d'hébergement de qualité supérieure.
-                    </p>
-                    <p>
-                      Chaque détail de notre résidence a été pensé avec soin pour garantir votre bien-être et 
-                      votre satisfaction. Du choix des matériaux naturels et chaleureux à l'aménagement des 
-                      espaces, tout respire la qualité et l'authenticité.
-                    </p>
-                    <p>
-                      Nos équipes dévouées travaillent quotidiennement avec passion pour faire de votre séjour 
-                      un moment inoubliable, alliant service personnalisé et attention aux moindres détails.
-                    </p>
+                    {histoire.map((p, i) => <p key={i}>{p}</p>)}
                   </div>
                 </div>
 
@@ -102,9 +78,9 @@ export default function AboutPage() {
             {/* Valeurs Section */}
             <div className="mb-20">
               <div className="text-center mb-12">
-                <h2 className="text-4xl font-serif font-bold text-[#5c3d2e] mb-4">Nos Valeurs</h2>
+                <h2 className="text-4xl font-serif font-bold text-[#5c3d2e] mb-4">{nosValeurs.titre}</h2>
                 <p className="text-lg text-[#8b6f47] max-w-2xl mx-auto">
-                  Les principes qui guident nos actions et notre engagement envers vous
+                  {nosValeurs.texte}
                 </p>
               </div>
 
@@ -148,17 +124,10 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-serif font-bold text-[#5c3d2e] mb-4">Notre Équipe</h2>
-                  <p className="text-[#5c3d2e]/80 leading-relaxed mb-6">
-                    Notre équipe est composée de professionnels expérimentés et passionnés par l'hospitalité. 
-                    Chaque membre de notre personnel est formé pour vous offrir un service de classe mondiale, 
-                    avec une attention particulière portée aux détails et à vos besoins spécifiques.
-                  </p>
-                  <p className="text-[#5c3d2e]/80 leading-relaxed">
-                    De la réception à l'entretien, en passant par les services personnalisés, nous mettons un 
-                    point d'honneur à créer une atmosphère chaleureuse et accueillante qui vous fera vous 
-                    sentir comme chez vous.
-                  </p>
+                  <h2 className="text-3xl font-serif font-bold text-[#5c3d2e] mb-4">{equipe.titre}</h2>
+                  {equipe.texte.split(/\n\s*\n/).map((p, i, all) => (
+                    <p key={i} className={`text-[#5c3d2e]/80 leading-relaxed ${i < all.length - 1 ? "mb-6" : ""}`}>{p}</p>
+                  ))}
                 </div>
               </div>
             </div>
@@ -169,10 +138,10 @@ export default function AboutPage() {
         <section className="py-16 bg-gradient-to-r from-[#5c3d2e] to-[#8b6f47] text-[#f8f4ef]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-6">
-              Rejoignez la Famille L.M. Résidence
+              {invitation.titre}
             </h2>
             <p className="text-lg text-[#ede8e0] mb-8 max-w-2xl mx-auto">
-              Découvrez par vous-même ce qui fait de notre résidence un lieu unique à Yaoundé.
+              {invitation.texte}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

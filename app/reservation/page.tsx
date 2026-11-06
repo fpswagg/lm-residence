@@ -6,10 +6,15 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { useState } from "react"
 import { useSearchParams } from "next/navigation"
+import { useSite, useTextes } from "@/components/site-provider"
 
 export default function ReservationPage() {
+  const { logements, contact } = useSite()
+  const page = useTextes()("Page Réservation")
   const searchParams = useSearchParams()
-  const logementId = searchParams.get("logement")
+  const voulu = searchParams.get("logement")
+  // The form sends the room's name, so the request can be read as it is.
+  const logementId = logements.find((l) => l.id === voulu)?.nom ?? ""
 
   const [formData, setFormData] = useState({
     nom: "",
@@ -22,6 +27,7 @@ export default function ReservationPage() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [failed, setFailed] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({
@@ -32,6 +38,7 @@ export default function ReservationPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setFailed(false)
 
     try {
       const response = await fetch("/api/reservations", {
@@ -53,9 +60,12 @@ export default function ReservationPage() {
           message: "",
         })
         setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        setFailed(true)
       }
     } catch (error) {
       console.error("Error submitting form:", error)
+      setFailed(true)
     }
   }
 
@@ -76,9 +86,9 @@ export default function ReservationPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">Réservation</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Réservez votre séjour à L.M. Résidence en quelques clics. Nous vous contacterons rapidement pour confirmer votre réservation.
+              {page.texte}
             </p>
           </div>
         </section>
@@ -166,10 +176,9 @@ export default function ReservationPage() {
                     className="w-full px-4 py-3 border-2 border-[#d4c5b0] rounded-lg bg-[#f8f4ef] text-[#5c3d2e] focus:outline-none focus:ring-2 focus:ring-[#7a9278] focus:border-[#7a9278] transition-all"
                   >
                     <option value="">Sélectionner un logement</option>
-                    <option value="1">Studio Confort</option>
-                    <option value="2">Studio Premium</option>
-                    <option value="3">Studio Deluxe</option>
-                    <option value="4">Chambre Individuelle</option>
+                    {logements.map((l) => (
+                      <option key={l.id} value={l.nom}>{l.nom}</option>
+                    ))}
                   </select>
                 </div>
 
@@ -233,6 +242,12 @@ export default function ReservationPage() {
                   placeholder="Demandes spéciales, services additionnels, allergies alimentaires, etc."
                 ></textarea>
               </div>
+
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" onChange={handleChange} />
+
+              {failed && (
+                <p className="text-sm text-red-700 mb-4">L'envoi n'a pas abouti. Réessayez, ou appelez-nous au {contact.phone}.</p>
+              )}
 
               <button
                 type="submit"

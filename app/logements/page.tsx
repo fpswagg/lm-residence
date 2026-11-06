@@ -5,53 +5,42 @@ import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Check, Users, Maximize2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
-import logements from "@/data/logements.json"
-
-interface Logement {
-  id: number
-  nom: string
-  type: string
-  description: string
-  capacite: number
-  surface: string
-  prix: number
-  devise: string
-  disponibilite: boolean
-  equipements: string[]
-  images: string[]
-}
+import { useSite, useTextes } from "@/components/site-provider"
+import type { Logement } from "@/lib/site-types"
 
 export default function LogementsPage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({})
-  const [currentFeaturesShow, setCurrentFeaturesShow] = useState<{ [key: number]: boolean }>({})
+  const { logements } = useSite()
+  const page = useTextes()("Page Logements")
+  const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: string]: number }>({})
+  const [currentFeaturesShow, setCurrentFeaturesShow] = useState<{ [key: string]: boolean }>({})
 
   useEffect(() => {
     // Initialize current image index for each logement
-    const initialIndexes: { [key: number]: number } = {}
+    const initialIndexes: { [key: string]: number } = {}
     logements.forEach((logement: Logement) => {
       initialIndexes[logement.id] = 0
     })
     setCurrentImageIndex(initialIndexes)
-  }, [])
+  }, [logements])
 
-  const doesFeaturesShow = (logementId: number) => Boolean(currentFeaturesShow[logementId]);
-  const toggleFeaturesShow = (logementId: number) => setCurrentFeaturesShow({ ...currentFeaturesShow, [logementId]: !doesFeaturesShow(logementId) });
+  const doesFeaturesShow = (logementId: string) => Boolean(currentFeaturesShow[logementId]);
+  const toggleFeaturesShow = (logementId: string) => setCurrentFeaturesShow({ ...currentFeaturesShow, [logementId]: !doesFeaturesShow(logementId) });
 
-  const nextImage = (logementId: number, totalImages: number) => {
+  const nextImage = (logementId: string, totalImages: number) => {
     setCurrentImageIndex((prev) => ({
       ...prev,
       [logementId]: (prev[logementId] + 1) % totalImages,
     }))
   }
 
-  const prevImage = (logementId: number, totalImages: number) => {
+  const prevImage = (logementId: string, totalImages: number) => {
     setCurrentImageIndex((prev) => ({
       ...prev,
       [logementId]: (prev[logementId] - 1 + totalImages) % totalImages,
     }))
   }
 
-  const goToImage = (logementId: number, index: number) => {
+  const goToImage = (logementId: string, index: number) => {
     setCurrentImageIndex((prev) => ({
       ...prev,
       [logementId]: index,
@@ -74,9 +63,9 @@ export default function LogementsPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">Nos Logements</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Découvrez notre sélection de studios et chambres haut de gamme, décorés avec goût dans un style artisanal chaleureux
+              {page.texte}
             </p>
           </div>
         </section>
@@ -202,7 +191,7 @@ export default function LogementsPage() {
                         </div>
                         <div>
                           <p className="text-xs text-[#b8956a] font-medium">Capacité</p>
-                          <p className="text-[#f8f4ef] font-semibold">{logement.capacite} pers.</p>
+                          <p className="text-[#f8f4ef] font-semibold">{logement.capacite ?? "–"} pers.</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3 p-4 bg-[#3d2817] rounded-lg border border-[#5c3d2e]">
@@ -211,7 +200,7 @@ export default function LogementsPage() {
                         </div>
                         <div>
                           <p className="text-xs text-[#b8956a] font-medium">Surface</p>
-                          <p className="text-[#f8f4ef] font-semibold">{logement.surface}</p>
+                          <p className="text-[#f8f4ef] font-semibold">{logement.surface || "–"}</p>
                         </div>
                       </div>
                     </div>

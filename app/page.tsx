@@ -3,9 +3,22 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import { useSite, useTextes } from "@/components/site-provider"
 import { ArrowRight, Home, Award, MapPin, CheckCircle, Users, Shield } from "lucide-react"
 
+const ATOUTS_STYLE = [
+  { icon: Home, color: "#7a9278" },
+  { icon: Users, color: "#cd9a51" },
+  { icon: MapPin, color: "#8b6f47" },
+]
+
 export default function HomePage() {
+  const { atouts } = useSite()
+  const t = useTextes()
+  const accueil = t("Accueil")
+  const pourquoi = t("Accueil - Pourquoi nous")
+  const invitation = t("Accueil - Invitation")
+
   return (
     <>
       <Navigation />
@@ -30,16 +43,15 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-[#cd9a51] mb-6 text-balance">
-            L.M. Résidence
+            {accueil.titre}
           </h1>
           
           <p className="text-2xl sm:text-3xl text-[#b8956a] mb-6 text-balance font-serif italic">
-            Votre destination de luxe à Yaoundé
+            {accueil.sousTitre}
           </p>
           
           <p className="text-lg text-[#f8f4ef]/80 mb-12 max-w-3xl mx-auto text-balance leading-relaxed">
-            Découvrez le confort et l'élégance dans nos logements haut de gamme, avec des services personnalisés pour un
-            séjour inoubliable. Une expérience artisanale de l'hospitalité.
+            {accueil.texte}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -84,36 +96,17 @@ export default function HomePage() {
             <div className="inline-block">
               <div className="h-1 w-16 bg-[#cd9a51] mx-auto mb-6"></div>
               <h2 className="text-4xl sm:text-5xl font-serif font-bold text-[#cd9a51] mb-4">
-                Pourquoi Choisir L.M. Résidence
+                {pourquoi.titre}
               </h2>
               <p className="text-lg text-[#b8956a] max-w-2xl mx-auto">
-                Une expérience unique alliant confort artisanal et services d'excellence
+                {pourquoi.texte}
               </p>
             </div>
           </div>
 
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Home,
-                titre: "Confort Premium",
-                description: "Des logements élégants et bien équipés, décorés avec goût dans un style artisanal chaleureux pour votre confort maximal.",
-                color: "#7a9278"
-              },
-              {
-                icon: Users,
-                titre: "Services Personnalisés",
-                description: "Cuisinier, chauffeur, sécurité - tous les services à votre disposition pour un séjour sans soucis.",
-                color: "#cd9a51"
-              },
-              {
-                icon: MapPin,
-                titre: "Localisation Idéale",
-                description: "Situé au cœur de Yaoundé, proche de tous les lieux d'intérêt et facilement accessible.",
-                color: "#8b6f47"
-              },
-            ].map((feature, idx) => (
+            {atouts.map((atout, idx) => ({ ...atout, ...ATOUTS_STYLE[idx % ATOUTS_STYLE.length] })).map((feature, idx) => (
               <div 
                 key={idx} 
                 className="group relative p-8 bg-[#2d1f15] rounded-xl border-2 border-[#5c3d2e] hover:border-[#cd9a51] hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
@@ -141,10 +134,10 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-r from-[#3d2817] to-[#5c3d2e] text-[#f8f4ef]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-6">
-            Prêt à Vivre l'Expérience L.M. Résidence ?
+            {invitation.titre}
           </h2>
           <p className="text-lg text-[#f8f4ef]/80 mb-8 max-w-2xl mx-auto">
-            Réservez dès maintenant et profitez de nos logements d'exception avec des services premium inclus.
+            {invitation.texte}
           </p>
           <Link
             href="/reservation"

@@ -1,0 +1,41 @@
+{
+  "textes": [
+    { "partie": "Accueil", "titre": "L.M. Résidence", "sousTitre": "Votre destination de luxe à Yaoundé", "texte": "Découvrez le confort et l'élégance dans nos logements haut de gamme, avec des services personnalisés pour un séjour inoubliable. Une expérience artisanale de l'hospitalité." },
+    { "partie": "Accueil - Pourquoi nous", "titre": "Pourquoi Choisir L.M. Résidence", "texte": "Une expérience unique alliant confort artisanal et services d'excellence" },
+    { "partie": "Atout 1", "titre": "Confort Premium", "texte": "Des logements élégants et bien équipés, décorés avec goût dans un style artisanal chaleureux pour votre confort maximal." },
+    { "partie": "Atout 2", "titre": "Services Personnalisés", "texte": "Cuisinier, chauffeur, sécurité - tous les services à votre disposition pour un séjour sans soucis." },
+    { "partie": "Atout 3", "titre": "Localisation Idéale", "texte": "Situé au cœur de Yaoundé, proche de tous les lieux d'intérêt et facilement accessible." },
+    { "partie": "Accueil - Invitation", "titre": "Prêt à Vivre l'Expérience L.M. Résidence ?", "texte": "Réservez dès maintenant et profitez de nos logements d'exception avec des services premium inclus." },
+    { "partie": "Page Logements", "titre": "Nos Logements", "texte": "Découvrez notre sélection de studios et chambres haut de gamme, décorés avec goût dans un style artisanal chaleureux" },
+    { "partie": "Page Services", "titre": "Nos Services", "texte": "Des services premium conçus avec soin pour enrichir votre séjour et vous offrir une expérience exceptionnelle" },
+    { "partie": "Services - Invitation", "titre": "Besoin d'un Service Personnalisé ?", "texte": "Contactez-nous pour discuter de vos besoins spécifiques. Nous sommes là pour rendre votre séjour parfait." },
+    { "partie": "Page Galerie", "titre": "Galerie", "texte": "Découvrez les espaces élégants et chaleureux de L.M. Résidence à travers notre galerie photo" },
+    { "partie": "Galerie - Invitation", "titre": "Envie de Découvrir Nos Espaces en Personne ?", "texte": "Réservez une visite ou contactez-nous pour plus d'informations sur nos logements et services." },
+    { "partie": "Page À propos", "titre": "À Propos de Nous", "texte": "Découvrez l'histoire, les valeurs et l'équipe qui font de L.M. Résidence un lieu d'exception" },
+    { "partie": "Nos valeurs", "titre": "Nos Valeurs", "texte": "Les principes qui guident nos actions et notre engagement envers vous" },
+    { "partie": "Valeur 1", "titre": "Excellence", "texte": "Nous recherchons l'excellence dans chaque aspect de nos services et installations." },
+    { "partie": "Valeur 2", "titre": "Hospitalité", "texte": "L'accueil chaleureux et authentique est au cœur de notre philosophie et de nos actions." },
+    { "partie": "Valeur 3", "titre": "Qualité", "texte": "Nous n'acceptons que les meilleurs standards de qualité pour votre confort absolu." },
+    { "partie": "Valeur 4", "titre": "Sécurité", "texte": "Votre sécurité et votre tranquillité d'esprit sont nos priorités absolues." },
+    { "partie": "Notre équipe", "titre": "Notre Équipe", "texte": "Notre équipe est composée de professionnels expérimentés et passionnés par l'hospitalité. Chaque membre de notre personnel est formé pour vous offrir un service de classe mondiale, avec une attention particulière portée aux détails et à vos besoins spécifiques.\n\nDe la réception à l'entretien, en passant par les services personnalisés, nous mettons un point d'honneur à créer une atmosphère chaleureuse et accueillante qui vous fera vous sentir comme chez vous." },
+    { "partie": "À propos - Invitation", "titre": "Rejoignez la Famille L.M. Résidence", "texte": "Découvrez par vous-même ce qui fait de notre résidence un lieu unique à Yaoundé." },
+    { "partie": "Page Contact", "titre": "Nous Contacter", "texte": "Nous sommes à votre écoute pour toute question ou demande d'information" },
+    { "partie": "Page Réservation", "titre": "Réservation", "texte": "Réservez votre séjour à L.M. Résidence en quelques clics. Nous vous contacterons rapidement pour confirmer votre réservation." },
+    { "partie": "Page Politiques", "titre": "Politiques & Horaires", "texte": "Informations importantes pour votre séjour" },
+    { "partie": "Bas de page", "texte": "Votre destination de choix pour un séjour confortable et luxueux à Yaoundé." },
+    { "partie": "Référencement", "titre": "Lucien Marie Résidence – Studios haut de gamme à Yaoundé", "texte": "Lucien Marie Résidence (L.M. Résidence) est un cadre résidentiel élégant et sécurisé situé à Yaoundé, au cœur du Cameroun. Trois studios modernes et une chambre individuelle y sont à disposition, alliant confort, autonomie, services personnalisés, cuisinier sur place, véhicule avec chauffeur et sécurité DAK 24/7. Idéal pour professionnels, expatriés, étudiants ou visiteurs recherchant un environnement calme, fonctionnel et raffiné, pour un séjour court ou long." }
+  ],
+  "histoire": "L.M. Résidence est née de la vision de créer un espace d'accueil exceptionnel à Yaoundé, où le confort artisanal rencontre l'excellence moderne. Depuis sa création, nous nous engageons à offrir une expérience d'hébergement de qualité supérieure.\n\nChaque détail de notre résidence a été pensé avec soin pour garantir votre bien-être et votre satisfaction. Du choix des matériaux naturels et chaleureux à l'aménagement des espaces, tout respire la qualité et l'authenticité.\n\nNos équipes dévouées travaillent quotidiennement avec passion pour faire de votre séjour un moment inoubliable, alliant service personnalisé et attention aux moindres détails.",
+  "regles": [
+    { "titre": "Horaires d'Arrivée et de Départ", "texte": "Check-in: À partir de 14h00\nCheck-out: Avant 11h00\nDes arrangements spéciaux peuvent être faits selon la disponibilité. Veuillez nous contacter." },
+    { "titre": "Règles de la Résidence", "texte": "Respecter le calme après 22h00\nPas de fumer à l'intérieur des logements\nLes animaux de compagnie ne sont pas autorisés\nRespecter les installations et équipements\nPas de fêtes ou réunions sans autorisation préalable" },
+    { "titre": "Conditions de Paiement", "texte": "Acompte de 30% requis à la réservation\nSolde à payer à l'arrivée\nNous acceptons les virements bancaires et les paiements en espèces" }
+  ],
+  "annulation": "Annulation gratuite jusqu'à 7 jours avant l'arrivée\n50% de frais d'annulation entre 3 et 7 jours\n100% de frais d'annulation moins de 3 jours avant l'arrivée",
+  "inclus": ["WiFi haute vitesse gratuit", "Climatisation", "Nettoyage quotidien", "Accès à la sécurité 24h/24", "Assistance concierge"],
+  "horaires": [
+    { "jours": "Lundi - Vendredi", "heures": "08:00 - 18:00" },
+    { "jours": "Samedi", "heures": "09:00 - 14:00" },
+    { "jours": "Dimanche", "heures": "Fermé" }
+  ]
+}

@@ -5,18 +5,7 @@ import { Footer } from "@/components/footer"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { ChefHat, Car, Shield, Sparkles, Shirt } from "lucide-react"
-import services from "@/data/services.json"
-
-interface Service {
-  id: number
-  nom: string
-  description: string
-  details: string
-  prix: number
-  devise: string
-  periode: string
-  options: string[]
-}
+import { useSite, useTextes } from "@/components/site-provider"
 
 const serviceIcons: { [key: string]: any } = {
   "chef": ChefHat,
@@ -28,7 +17,11 @@ const serviceIcons: { [key: string]: any } = {
 
 export default function ServicesPage() {
   const router = useRouter();
-  const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE!.replace("+", "").replaceAll(" ","")}`;
+  const { services, contact } = useSite()
+  const t = useTextes()
+  const page = t("Page Services")
+  const invitation = t("Services - Invitation")
+  const whatsappUrl = `https://wa.me/${contact.phone.replace("+", "").replaceAll(" ","")}`;
 
   const getServiceIcon = (serviceName: string) => {
     for (const key in serviceIcons) {
@@ -55,9 +48,9 @@ export default function ServicesPage() {
             <div className="flex justify-center mb-6">
               <div className="h-1 w-20 bg-[#cd9a51]"></div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">Nos Services</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-center">{page.titre}</h1>
             <p className="text-lg text-[#ede8e0] text-center max-w-2xl mx-auto">
-              Des services premium conçus avec soin pour enrichir votre séjour et vous offrir une expérience exceptionnelle
+              {page.texte}
             </p>
           </div>
         </section>
@@ -133,9 +126,9 @@ export default function ServicesPage() {
         {/* Additional Info Section */}
         <section className="py-16 bg-gradient-to-r from-[#5c3d2e] to-[#8b6f47] text-[#f8f4ef]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-serif font-bold mb-4">Besoin d'un Service Personnalisé ?</h2>
+            <h2 className="text-3xl font-serif font-bold mb-4">{invitation.titre}</h2>
             <p className="text-lg text-[#ede8e0] mb-8">
-              Contactez-nous pour discuter de vos besoins spécifiques. Nous sommes là pour rendre votre séjour parfait.
+              {invitation.texte}
             </p>
             <a
               href="/contact"

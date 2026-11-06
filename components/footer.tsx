@@ -1,9 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from "lucide-react"
 import logo from "@/public/logo.png"
+import { useSite, useTextes } from "@/components/site-provider"
 
 export function Footer() {
+  const { contact } = useSite()
+  const basDePage = useTextes()("Bas de page")
+
   return (
     <footer className="relative bg-gradient-to-b from-[#3d2817] to-[#1a1612] text-[#f8f4ef]">
       {/* Decorative wood grain top border */}
@@ -30,17 +36,17 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-[#ede8e0] leading-relaxed mb-6">
-              Votre destination de choix pour un séjour confortable et luxueux à Yaoundé.
+              {basDePage.texte}
             </p>
             {/* Social Media */}
             <div className="flex gap-3">
-              {process.env.NEXT_PUBLIC_FACEBOOK_URL && <a href={process.env.NEXT_PUBLIC_FACEBOOK_URL} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
+              {contact.facebook && <a href={contact.facebook} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <Facebook size={16} />
               </a>}
-              {process.env.NEXT_PUBLIC_INSTAGRAM_URL && <a href={process.env.NEXT_PUBLIC_INSTAGRAM_URL} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
+              {contact.instagram && <a href={contact.instagram} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <Instagram size={16} />
               </a>}
-              {process.env.NEXT_PUBLIC_TWITTER_URL && <a href={process.env.NEXT_PUBLIC_TWITTER_URL} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
+              {contact.twitter && <a href={contact.twitter} className="w-9 h-9 rounded-full bg-[#8b6f47]/30 hover:bg-[#cd9a51] flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <Twitter size={16} />
               </a>}
             </div>
@@ -87,22 +93,22 @@ export function Footer() {
           <div>
             <h3 className="font-serif text-lg font-bold mb-6 text-[#cd9a51]">Contact</h3>
             <div className="space-y-4 text-sm">
-              <a href={`tel:${process.env.NEXT_PUBLIC_PHONE!.replaceAll(" ", "")}`} className="flex items-start gap-3 text-[#ede8e0] hover:text-[#cd9a51] transition-colors group">
+              <a href={`tel:${contact.phone.replaceAll(" ", "")}`} className="flex items-start gap-3 text-[#ede8e0] hover:text-[#cd9a51] transition-colors group">
                 <div className="w-8 h-8 rounded-md bg-[#8b6f47]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#cd9a51]/30 transition-colors">
                   <Phone size={14} />
                 </div>
                 <div>
                   <p className="font-medium">Téléphone</p>
-                  <p className="text-xs text-[#d4c5b0]">{process.env.NEXT_PUBLIC_PHONE}</p>
+                  <p className="text-xs text-[#d4c5b0]">{contact.phone}</p>
                 </div>
               </a>
-              <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="flex items-start gap-3 text-[#ede8e0] hover:text-[#cd9a51] transition-colors group">
+              <a href={`mailto:${contact.email}`} className="flex items-start gap-3 text-[#ede8e0] hover:text-[#cd9a51] transition-colors group">
                 <div className="w-8 h-8 rounded-md bg-[#8b6f47]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#cd9a51]/30 transition-colors">
                   <Mail size={14} />
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-xs text-[#d4c5b0]">{process.env.NEXT_PUBLIC_EMAIL}</p>
+                  <p className="text-xs text-[#d4c5b0]">{contact.email}</p>
                 </div>
               </a>
               <div className="flex items-start gap-3 text-[#ede8e0]">
@@ -111,7 +117,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="font-medium">Adresse</p>
-                  <p className="text-xs text-[#d4c5b0]">{process.env.NEXT_PUBLIC_ADDRESS}</p>
+                  <p className="text-xs text-[#d4c5b0]">{contact.address}</p>
                 </div>
               </div>
             </div>
